@@ -38,6 +38,8 @@
 		<thm_active/>
 		<thm_font>Roboto</thm_font>
 		<thm_iconset/>
+		<thm_code_editor_theme/>
+		<thm_html_editor_theme>LIGHT</thm_html_editor_theme>
 		<thm_menu_dom_c>#FFFFFF</thm_menu_dom_c>
 		<thm_menu_dom_t>#000091</thm_menu_dom_t>
 		<thm_menu_dact_c>#FFFFFF</thm_menu_dact_c>
