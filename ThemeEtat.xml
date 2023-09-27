@@ -36,7 +36,7 @@
 		<thm_addon>files/Theme/ThemeEtat/addon.less</thm_addon>
 		<thm_searchbox>#F7F7F7</thm_searchbox>
 		<thm_active/>
-		<thm_font>Roboto</thm_font>
+		<thm_font>Marianne</thm_font>
 		<thm_iconset/>
 		<thm_code_editor_theme/>
 		<thm_html_editor_theme>LIGHT</thm_html_editor_theme>
@@ -53,6 +53,27 @@
 		<thm_compact>0</thm_compact>
 		<row_module_id.mdl_name>ThemeEtat</row_module_id.mdl_name>
 		<thm_const>files/Theme/ThemeEtat/const.less</thm_const>
+	</data>
+</object>
+<object>
+	<name>Resource</name>
+	<action>upsert</action>
+	<data>
+		<res_object>
+			<object>
+				<name>Disposition</name>
+				<data>
+					<dis_code>default</dis_code>
+				</data>
+			</object>
+		</res_object>
+		<res_type>FONT</res_type>
+		<res_lang>ANY</res_lang>
+		<res_code>Marianne</res_code>
+		<res_cached>0</res_cached>
+		<res_file>resources/Disposition/default/Marianne.woff</res_file>
+		<res_image/>
+		<row_module_id.mdl_name>ThemeEtat</row_module_id.mdl_name>
 	</data>
 </object>
 </simplicite>
