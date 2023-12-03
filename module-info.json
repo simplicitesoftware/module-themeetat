@@ -1,9 +1,9 @@
 {
-    "date": "2023-11-20 11:16:53",
+    "date": "2023-12-03 17:06:32",
     "name": "ThemeEtat",
     "format": "xml",
     "files": ["ThemeEtat.xml"],
     "repository": {"origin": {"uri": "https://github.com/simplicitesoftware/module-themeetat.git"}},
     "version": "5",
-    "platform": "5.3.23-preview"
+    "platform": "5.3.24-preview"
 }
