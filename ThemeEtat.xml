@@ -8,13 +8,11 @@
 		<mdl_version>6</mdl_version>
 		<mdl_prefix/>
 		<mdl_url><![CDATA[{
-	"type": "git",
-	"branch": "v6",
-	"origin": {
-		"uri": "https://github.com/simplicitesoftware/module-themeetat.git"
-	}
+    "origin": {"uri": "https://github.com/simplicitesoftware/module-themeetat.git"},
+    "type": "git",
+    "branch": "v6"
 }]]></mdl_url>
-		<mdl_type/>
+		<mdl_type>C</mdl_type>
 		<mdl_comment><![CDATA[Theme inspiré du [**Système de Design de l'État**](https://www.systeme-de-design.gouv.fr/composants-et-modeles)]]></mdl_comment>
 	</data>
 </object>

@@ -11,5 +11,5 @@
 `ThemeEtat` module definition
 =============================
 
-Theme inspiré du [**Système de Design de l'État**](https://gouvfr.atlassian.net/wiki/spaces/DB/overview?homepageId=145359476)
+Theme inspiré du [**Système de Design de l'État**](https://www.systeme-de-design.gouv.fr/composants-et-modeles)
 
