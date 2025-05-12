@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<simplicite elements="5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.simplicite.fr/base" xsi:schemaLocation="http://www.simplicite.fr/base https://www.simplicite.io/resources/schemas/base.xsd">
+<simplicite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.simplicite.fr/base" xsi:schemaLocation="http://www.simplicite.fr/base https://www.simplicite.io/resources/schemas/base.xsd">
 <object>
 	<name>Module</name>
 	<action>upsert</action>
 	<data>
 		<mdl_name>ThemeEtat</mdl_name>
-		<mdl_version>6</mdl_version>
+		<mdl_version>5</mdl_version>
 		<mdl_prefix/>
 		<mdl_url><![CDATA[{
 	"type": "git",
-	"branch": "v6",
 	"origin": {
 		"uri": "https://github.com/simplicitesoftware/module-themeetat.git"
 	}
 }]]></mdl_url>
 		<mdl_type/>
-		<mdl_comment><![CDATA[Theme inspiré du [**Système de Design de l'État**](https://www.systeme-de-design.gouv.fr/composants-et-modeles)]]></mdl_comment>
+		<mdl_comment><![CDATA[Theme inspiré du [**Système de Design de l'État**](https://gouvfr.atlassian.net/wiki/spaces/DB/overview?homepageId=145359476)]]></mdl_comment>
 	</data>
 </object>
 <object>
@@ -38,7 +37,6 @@
 		<thm_searchbox>#F7F7F7</thm_searchbox>
 		<thm_active/>
 		<thm_font>Marianne</thm_font>
-		<thm_font_mono/>
 		<thm_iconset/>
 		<thm_code_editor_theme/>
 		<thm_html_editor_theme>LIGHT</thm_html_editor_theme>
@@ -73,7 +71,7 @@
 		<res_lang>ANY</res_lang>
 		<res_code>Marianne</res_code>
 		<res_cached>0</res_cached>
-		<res_file>resources/Disposition/default/Marianne.zip</res_file>
+		<res_file>resources/Disposition/default/Marianne.woff</res_file>
 		<res_image/>
 		<row_module_id.mdl_name>ThemeEtat</row_module_id.mdl_name>
 	</data>
@@ -94,15 +92,22 @@
 		<res_image>resources/Disposition/default/themeetat-module.svg</res_image>
 		<row_module_id.mdl_name>ThemeEtat</row_module_id.mdl_name>
 	</data>
-</object>
-<object>
-	<name>Dataset</name>
-	<action>upsert</action>
 	<data>
+		<res_object>
+			<object>
+				<name>Disposition</name>
+				<data>
+					<dis_code>default</dis_code>
+				</data>
+			</object>
+		</res_object>
+		<res_type>SET</res_type>
+		<res_lang>ANY</res_lang>
+		<res_code>ICONS_ETAT</res_code>
+		<res_cached>0</res_cached>
+		<res_file>resources/Disposition/default/ICONS_ETAT.zip</res_file>
+		<res_image/>
 		<row_module_id.mdl_name>ThemeEtat</row_module_id.mdl_name>
-		<dt_name>apply-dsfr-to-demo-userhome</dt_name>
-		<dt_file>data/apply-dsfr-to-demo-userhome.xml</dt_file>
-		<dt_desc><![CDATA[Apply DSFR to Simplicité's Demo Module]]></dt_desc>
 	</data>
 </object>
 </simplicite>
