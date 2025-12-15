@@ -1,0 +1,9 @@
+{
+    "date": "2025-12-15 12:17:55",
+    "name": "ThemesDSFR",
+    "format": "json",
+    "files": ["ThemesDSFR.json"],
+    "repository": {"origin": {"uri": "https://github.com/simplicitesoftware/module-themeetat.git"}},
+    "version": "1.14.2",
+    "platform": "6.3.0-beta-RC1"
+}

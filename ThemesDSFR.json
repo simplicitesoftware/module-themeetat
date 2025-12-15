@@ -1,0 +1,197 @@
+{
+ "object": "Module",
+ "userkey": "ThemesDSFR",
+ "item": {
+  "mdl_name": "ThemesDSFR",
+  "mdl_prefix": "dsfr",
+  "mdl_version": "1.14.2",
+  "mdl_type": "C",
+  "mdl_icon": null,
+  "mdl_url": "{\n\t\"origin\": {\n\t\t\"uri\": \"https://github.com/simplicitesoftware/module-themeetat.git\"\n\t},\n\t\"type\": \"git\",\n\t\"branch\": \"dsfr-v6\"\n}",
+  "mdl_comment": null
+ },
+ "links": [
+  {
+   "object": "Theme",
+   "label": "Themes",
+   "icon": "img/system/theme",
+   "field": "row_module_id",
+   "list": [
+    {
+     "object": "Theme",
+     "userkey": "Theme-DSFR-dark",
+     "item": {
+      "thm_name": "Theme-DSFR-dark",
+      "thm_logo_id": {
+       "path": "files/Theme/Theme-DSFR-dark/logo.png",
+       "mime": "image/png",
+       "name": "dsfr-headerlogo.png"
+      },
+      "thm_logo_invert": null,
+      "thm_logo2_id": {
+       "path": "files/Theme/Theme-DSFR-dark/logo2.png",
+       "mime": "image/png",
+       "name": "dsfr-scope.png"
+      },
+      "thm_favicon_id": {
+       "path": "files/Theme/Theme-DSFR-dark/favicon.png",
+       "mime": "image/png",
+       "name": "dsfr-favicon.png"
+      },
+      "thm_color1": null,
+      "thm_color2": null,
+      "thm_text2": null,
+      "thm_color3": null,
+      "thm_text3": null,
+      "thm_base": "dark",
+      "thm_css_doc": {
+       "path": "files/Theme/Theme-DSFR-dark/Theme-DSFR-dark_gen.css",
+       "mime": "text/css",
+       "name": "Theme-DSFR-dark_gen.css"
+      },
+      "thm_addon": {
+       "path": "files/Theme/Theme-DSFR-dark/addon.less",
+       "mime": "text/x-less",
+       "name": "Theme-DSFR-dark.less"
+      },
+      "thm_searchbox": null,
+      "thm_active": null,
+      "thm_font": "Marianne",
+      "thm_font_mono": null,
+      "thm_iconset": null,
+      "thm_code_editor_theme": "cobalt",
+      "thm_html_editor_theme": "DARK",
+      "thm_menu_dom_c": null,
+      "thm_menu_dom_t": null,
+      "thm_menu_dact_c": null,
+      "thm_menu_dact_t": null,
+      "thm_menu_sub_c": null,
+      "thm_menu_sub_t": null,
+      "thm_menu_sact_c": null,
+      "thm_menu_sact_t": null,
+      "thm_menu_sta_c": null,
+      "thm_menu_sta_t": null,
+      "thm_compact": false,
+      "row_module_id__mdl_name": "ThemesDSFR",
+      "thm_const": null
+     }
+    },
+    {
+     "object": "Theme",
+     "userkey": "Theme-DSFR-light",
+     "item": {
+      "thm_name": "Theme-DSFR-light",
+      "thm_logo_id": {
+       "path": "files/Theme/Theme-DSFR-light/logo.png",
+       "mime": "image/png",
+       "name": "dsfr-headerlogo.png"
+      },
+      "thm_logo_invert": null,
+      "thm_logo2_id": {
+       "path": "files/Theme/Theme-DSFR-light/logo2.png",
+       "mime": "image/png",
+       "name": "dsfr-scope.png"
+      },
+      "thm_favicon_id": {
+       "path": "files/Theme/Theme-DSFR-light/favicon.png",
+       "mime": "image/png",
+       "name": "dsfr-favicon.png"
+      },
+      "thm_color1": null,
+      "thm_color2": null,
+      "thm_text2": null,
+      "thm_color3": null,
+      "thm_text3": null,
+      "thm_base": "light",
+      "thm_css_doc": {
+       "path": "files/Theme/Theme-DSFR-light/Theme-DSFR-light_gen.css",
+       "mime": "text/css",
+       "name": "Theme-DSFR-light_gen.css"
+      },
+      "thm_addon": {
+       "path": "files/Theme/Theme-DSFR-light/addon.less",
+       "mime": "text/x-less",
+       "name": "ThemeDSFR-extended.less"
+      },
+      "thm_searchbox": null,
+      "thm_active": null,
+      "thm_font": "Marianne",
+      "thm_font_mono": null,
+      "thm_iconset": null,
+      "thm_code_editor_theme": "dreamwaver",
+      "thm_html_editor_theme": "LIGHT",
+      "thm_menu_dom_c": null,
+      "thm_menu_dom_t": null,
+      "thm_menu_dact_c": null,
+      "thm_menu_dact_t": null,
+      "thm_menu_sub_c": null,
+      "thm_menu_sub_t": null,
+      "thm_menu_sact_c": null,
+      "thm_menu_sact_t": null,
+      "thm_menu_sta_c": null,
+      "thm_menu_sta_t": null,
+      "thm_compact": false,
+      "row_module_id__mdl_name": "ThemesDSFR",
+      "thm_const": null
+     }
+    }
+   ]
+  },
+  {
+   "object": "Resource",
+   "label": "Resources",
+   "icon": "img/system/resource",
+   "field": "row_module_id",
+   "list": [
+    {
+     "object": "Resource",
+     "userkey": "Disposition(default)~ANY~ICONS_DSFR",
+     "item": {
+      "res_object": {
+       "object": "Disposition",
+       "label": "Disposition",
+       "userkeylabel": "default",
+       "icon": "img/system/disposition",
+       "item": {"dis_code": "default"}
+      },
+      "res_type": "SET",
+      "res_lang": "ANY",
+      "res_code": "ICONS_DSFR",
+      "res_cached": false,
+      "res_file": {
+       "path": "resources/Disposition/default/ICONS_DSFR.zip",
+       "mime": "application/zip",
+       "name": "icons 2.zip"
+      },
+      "res_image": null,
+      "row_module_id__mdl_name": "ThemesDSFR"
+     }
+    },
+    {
+     "object": "Resource",
+     "userkey": "Disposition(default)~ANY~ICONS_DSFR-PICTOS",
+     "item": {
+      "res_object": {
+       "object": "Disposition",
+       "label": "Disposition",
+       "userkeylabel": "default",
+       "icon": "img/system/disposition",
+       "item": {"dis_code": "default"}
+      },
+      "res_type": "SET",
+      "res_lang": "ANY",
+      "res_code": "ICONS_DSFR-PICTOS",
+      "res_cached": false,
+      "res_file": {
+       "path": "resources/Disposition/default/ICONS_DSFR-PICTOS.zip",
+       "mime": "application/zip",
+       "name": "icons.zip"
+      },
+      "res_image": null,
+      "row_module_id__mdl_name": "ThemesDSFR"
+     }
+    }
+   ]
+  }
+ ]
+}

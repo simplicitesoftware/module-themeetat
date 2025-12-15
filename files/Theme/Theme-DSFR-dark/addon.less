@@ -1,0 +1,2371 @@
+/* =============================================================================
+   DISCLAIMER - DSFR-INSPIRED STYLES
+   =============================================================================
+
+   /!\  IMPORTANT NOTICE  /!\
+
+   These styles are NOT an official implementation of the Système de Design
+   de l'État (DSFR). They are inspired by DSFR's visual identity for
+   stylistic purposes only.
+
+   - This is NOT a certified DSFR implementation
+   - These styles only replicate the visual appearance and aesthetic
+   - No claim is made to official DSFR compliance or endorsement
+   - Not intended to represent or impersonate French government services
+
+   Based on: DSFR v1.14.2 (17/09/2025)
+   Source: https://www.systeme-de-design.gouv.fr/
+
+   For official DSFR implementation, please refer to:
+   https://github.com/GouvernementFR/dsfr
+   https://www.systeme-de-design.gouv.fr/version-courante/fr/premiers-pas
+
+   ============================================================================= */
+
+// --- Complete Color Palette
+:root {
+  --grey-0: #000; --grey-0-h: #000; --grey-0-a: #000;
+
+  --grey-50: #161616; --grey-50-h: #343434; --grey-50-a: #474747;
+
+  --grey-75: #1e1e1e; --grey-75-h: #3f3f3f; --grey-75-a: #525252;
+
+  --grey-100: #242424; --grey-100-h: #474747; --grey-100-a: #5b5b5b;
+
+  --grey-125: #2a2a2a; --grey-125-h: #4e4e4e; --grey-125-a: #636363;
+
+  --grey-150: #2f2f2f; --grey-150-h: #545454; --grey-150-a: #696969;
+
+  --grey-175: #353535; --grey-175-h: #5c5c5c; --grey-175-a: #717171;
+
+  --grey-200: #3a3a3a; --grey-200-h: #616161; --grey-200-a: #777;
+
+  --grey-425: #666; --grey-425-h: #919191; --grey-425-a: #a6a6a6;
+
+  --grey-625: #929292; --grey-625-h: #bbb; --grey-625-a: #cecece;
+
+  --grey-850: #cecece; --grey-850-h: #a8a8a8; --grey-850-a: #939393;
+
+  --grey-900: #ddd; --grey-900-h: #bbb; --grey-900-a: #a7a7a7;
+
+  --grey-925: #e5e5e5; --grey-925-h: #c5c5c5; --grey-925-a: #b2b2b2;
+
+  --grey-950: #eee; --grey-950-h: #d2d2d2; --grey-950-a: #c1c1c1;
+
+  --grey-975: #f6f6f6; --grey-975-h: #dfdfdf; --grey-975-a: #cfcfcf;
+
+  --grey-1000: #fff; --grey-1000-h: #f6f6f6; --grey-1000-a: #ededed;
+
+  --grey-main-525: #7b7b7b; --grey-main-525-h: #a6a6a6; --grey-main-525-a: #bababa;
+
+  --blue-france-75: #1b1b35; --blue-france-75-h: #3a3a68; --blue-france-75-a: #4d4d83;
+
+  --blue-france-100: #21213f; --blue-france-100-h: #424275; --blue-france-100-a: #56568c;
+
+  --blue-france-125: #272747; --blue-france-125-h: #4a4a7d; --blue-france-125-a: #5e5e90;
+
+  --blue-france-200: #313178; --blue-france-200-h: #5757ad; --blue-france-200-a: #6c6cbb;
+
+  --blue-france-625: #8585f6; --blue-france-625-h: #b1b1f9; --blue-france-625-a: #c6c6fb;
+
+  --blue-france-850: #cacafb; --blue-france-850-h: #a1a1f8; --blue-france-850-a: #8b8bf6;
+
+  --blue-france-925: #e3e3fd; --blue-france-925-h: #c1c1fb; --blue-france-925-a: #adadf9;
+
+  --blue-france-950: #ececfe; --blue-france-950-h: #cecefc; --blue-france-950-a: #bbbbfc;
+
+  --blue-france-975: #f5f5fe; --blue-france-975-h: #dcdcfc; --blue-france-975-a: #cbcbfa;
+
+  --blue-france-sun-113: #000091; --blue-france-sun-113-h: #1212ff; --blue-france-sun-113-a: #2323ff;
+
+  --blue-france-main-525: #6a6af4; --blue-france-main-525-h: #9898f8; --blue-france-main-525-a: #aeaef9;
+
+  --red-marianne-75: #2b1919; --red-marianne-75-h: #573737; --red-marianne-75-a: #704848;
+
+  --red-marianne-100: #331f1f; --red-marianne-100-h: #613f3f; --red-marianne-100-a: #7b5151;
+
+  --red-marianne-125: #3b2424; --red-marianne-125-h: #6b4545; --red-marianne-125-a: #865757;
+
+  --red-marianne-200: #5e2a2b; --red-marianne-200-h: #9c4a4c; --red-marianne-200-a: #be5c5e;
+
+  --red-marianne-425: #c9191e; --red-marianne-425-h: #f93f42; --red-marianne-425-a: #f95a5c;
+
+  --red-marianne-625: #f95c5e; --red-marianne-625-h: #fa9293; --red-marianne-625-a: #fbabac;
+
+  --red-marianne-850: #fcbfbf; --red-marianne-850-h: #fb8f8f; --red-marianne-850-a: #fa7474;
+
+  --red-marianne-925: #fddede; --red-marianne-925-h: #fbb6b6; --red-marianne-925-a: #fa9e9e;
+
+  --red-marianne-950: #fee9e9; --red-marianne-950-h: #fdc5c5; --red-marianne-950-a: #fcafaf;
+
+  --red-marianne-975: #fef4f4; --red-marianne-975-h: #fcd7d7; --red-marianne-975-a: #fac4c4;
+
+  --red-marianne-main-472: #e1000f; --red-marianne-main-472-h: #ff292f; --red-marianne-main-472-a: #ff4347;
+
+  --info-75: #171d2e; --info-75-h: #333e5c; --info-75-a: #445177;
+
+  --info-100: #1d2437; --info-100-h: #3b4767; --info-100-a: #4c5b83;
+
+  --info-125: #222a3f; --info-125-h: #414e71; --info-125-a: #53638d;
+
+  --info-200: #273961; --info-200-h: #45619f; --info-200-a: #5576c0;
+
+  --info-425: #0063cb; --info-425-h: #3b87ff; --info-425-a: #6798ff;
+
+  --info-625: #518fff; --info-625-h: #98b4ff; --info-625-a: #b4c7ff;
+
+  --info-850: #bccdff; --info-850-h: #83a9ff; --info-850-a: #5f96ff;
+
+  --info-925: #dde5ff; --info-925-h: #b1c6ff; --info-925-a: #95b4ff;
+
+  --info-950: #e8edff; --info-950-h: #c2d1ff; --info-950-a: #a9bfff;
+
+  --info-975: #f4f6ff; --info-975-h: #d6deff; --info-975-a: #c2cfff;
+
+  --info-main-525: #0078f3; --info-main-525-h: #6196ff; --info-main-525-a: #85a9ff;
+
+  --success-75: #142117; --success-75-h: #2e4533; --success-75-a: #3d5943;
+
+  --success-100: #19271d; --success-100-h: #344c3b; --success-100-a: #44624d;
+
+  --success-125: #1e2e22; --success-125-h: #3b5541; --success-125-a: #4b6b53;
+
+  --success-200: #204129; --success-200-h: #3a6d48; --success-200-a: #478558;
+
+  --success-425: #18753c; --success-425-h: #27a959; --success-425-a: #2fc368;
+
+  --success-625: #27a658; --success-625-h: #36d975; --success-625-a: #3df183;
+
+  --success-850: #3bea7e; --success-850-h: #2cb862; --success-850-a: #259e53;
+
+  --success-925: #88fdaa; --success-925-h: #3ee87e; --success-925-a: #36d070;
+
+  --success-950: #b8fec9; --success-950-h: #46fd89; --success-950-a: #34eb7b;
+
+  --success-975: #dffee6; --success-975-h: #8afcab; --success-975-a: #4efb8d;
+
+  --success-main-525: #1f8d49; --success-main-525-h: #2ec166; --success-main-525-a: #36db75;
+
+  --warning-75: #2d1814; --warning-75-h: #5b352e; --warning-75-a: #75473e;
+
+  --warning-100: #361e19; --warning-100-h: #663d35; --warning-100-a: #824f44;
+
+  --warning-125: #3e231e; --warning-125-h: #70433b; --warning-125-a: #8d564c;
+
+  --warning-200: #5d2c20; --warning-200-h: #9a4d3a; --warning-200-a: #bc5f49;
+
+  --warning-425: #b34000; --warning-425-h: #ff6218; --warning-425-a: #ff7a55;
+
+  --warning-625: #fc5d00; --warning-625-h: #ff8c73; --warning-625-a: #ffa595;
+
+  --warning-850: #ffbeb4; --warning-850-h: #ff8e77; --warning-850-a: #ff7550;
+
+  --warning-925: #ffded9; --warning-925-h: #ffb6a9; --warning-925-a: #ff9f8b;
+
+  --warning-950: #ffe9e6; --warning-950-h: #ffc6bd; --warning-950-a: #ffb0a2;
+
+  --warning-975: #fff4f3; --warning-975-h: #ffd7d3; --warning-975-a: #ffc4bd;
+
+  --warning-main-525: #d64d00; --warning-main-525-h: #ff754e; --warning-main-525-a: #ff8e76;
+
+  --error-75: #301717; --error-75-h: #603434; --error-75-a: #7c4444;
+
+  --error-100: #391c1c; --error-100-h: #6c3a3a; --error-100-a: #894b4b;
+
+  --error-125: #412121; --error-125-h: #764040; --error-125-a: #935252;
+
+  --error-200: #642626; --error-200-h: #a74545; --error-200-a: #cb5555;
+
+  --error-425: #ce0500; --error-425-h: #ff2725; --error-425-a: #ff4140;
+
+  --error-625: #ff5655; --error-625-h: #ff8c8c; --error-625-a: #ffa6a6;
+
+  --error-850: #ffbdbd; --error-850-h: #ff8c8c; --error-850-a: #ff7272;
+
+  --error-925: #fdd; --error-925-h: #ffb4b4; --error-925-a: #ff9c9c;
+
+  --error-950: #ffe9e9; --error-950-h: #ffc5c5; --error-950-a: #ffafaf;
+
+  --error-975: #fff4f4; --error-975-h: #ffd7d7; --error-975-a: #ffc3c3;
+
+  --error-main-525: #f60700; --error-main-525-h: #ff3634; --error-main-525-a: #ff5150;
+
+  --focus-525: #0A76F6;
+
+  --green-tilleul-verveine-75: #201e14; --green-tilleul-verveine-75-h: #433f2e; --green-tilleul-verveine-75-a: #57533d;
+
+  --green-tilleul-verveine-100: #272419; --green-tilleul-verveine-100-h: #4c4734; --green-tilleul-verveine-100-a: #615b44;
+
+  --green-tilleul-verveine-125: #2d2a1d; --green-tilleul-verveine-125-h: #534f39; --green-tilleul-verveine-125-a: #696349;
+
+  --green-tilleul-verveine-200: #3f3a20; --green-tilleul-verveine-200-h: #6a6239; --green-tilleul-verveine-200-a: #807747;
+
+  --green-tilleul-verveine-850: #e2cf58; --green-tilleul-verveine-850-h: #b7a846; --green-tilleul-verveine-850-a: #a0923c;
+
+  --green-tilleul-verveine-925: #fbe769; --green-tilleul-verveine-925-h: #d7c655; --green-tilleul-verveine-925-a: #c2b24c;
+
+  --green-tilleul-verveine-950: #fceeac; --green-tilleul-verveine-950-h: #e8d45c; --green-tilleul-verveine-950-a: #d4c254;
+
+  --green-tilleul-verveine-975: #fef7da; --green-tilleul-verveine-975-h: #fce552; --green-tilleul-verveine-975-a: #ebd54c;
+
+  --green-tilleul-verveine-sun-418: #66673d; --green-tilleul-verveine-sun-418-h: #929359; --green-tilleul-verveine-sun-418-a: #a7a967;
+
+  --green-tilleul-verveine-moon-817: #d8c634; --green-tilleul-verveine-moon-817-h: #fee943; --green-tilleul-verveine-moon-817-a: #fef1ab;
+
+  --green-tilleul-verveine-main-707: #b7a73f; --green-tilleul-verveine-main-707-h: #e3cf50; --green-tilleul-verveine-main-707-a: #f6e157;
+
+  --green-bourgeon-75: #182014; --green-bourgeon-75-h: #35432e; --green-bourgeon-75-a: #46573d;
+
+  --green-bourgeon-100: #1e2719; --green-bourgeon-100-h: #3d4c34; --green-bourgeon-100-a: #4e6144;
+
+  --green-bourgeon-125: #232d1d; --green-bourgeon-125-h: #435339; --green-bourgeon-125-a: #556949;
+
+  --green-bourgeon-200: #2a401a; --green-bourgeon-200-h: #496b30; --green-bourgeon-200-a: #5a833c;
+
+  --green-bourgeon-850: #95e257; --green-bourgeon-850-h: #77b645; --green-bourgeon-850-a: #679e3b;
+
+  --green-bourgeon-925: #a9fb68; --green-bourgeon-925-h: #8ed654; --green-bourgeon-925-a: #7fc04b;
+
+  --green-bourgeon-950: #c9fcac; --green-bourgeon-950-h: #9ae95d; --green-bourgeon-950-a: #8dd555;
+
+  --green-bourgeon-975: #e6feda; --green-bourgeon-975-h: #a7fc62; --green-bourgeon-975-a: #98ed4d;
+
+  --green-bourgeon-sun-425: #447049; --green-bourgeon-sun-425-h: #639f6a; --green-bourgeon-sun-425-a: #72b77a;
+
+  --green-bourgeon-moon-759: #99c221; --green-bourgeon-moon-759-h: #baec2a; --green-bourgeon-moon-759-a: #c9fd2e;
+
+  --green-bourgeon-main-640: #68a532; --green-bourgeon-main-640-h: #87d443; --green-bourgeon-main-640-a: #95e94a;
+
+  --green-emeraude-75: #142018; --green-emeraude-75-h: #2e4335; --green-emeraude-75-a: #3d5846;
+
+  --green-emeraude-100: #19271e; --green-emeraude-100-h: #344c3d; --green-emeraude-100-a: #44624f;
+
+  --green-emeraude-125: #1e2e23; --green-emeraude-125-h: #3b5543; --green-emeraude-125-a: #4b6b55;
+
+  --green-emeraude-200: #21402c; --green-emeraude-200-h: #3b6c4c; --green-emeraude-200-a: #49835e;
+
+  --green-emeraude-850: #6fe49d; --green-emeraude-850-h: #58b77d; --green-emeraude-850-a: #4b9f6c;
+
+  --green-emeraude-925: #9ef9be; --green-emeraude-925-h: #69df97; --green-emeraude-925-a: #5ec988;
+
+  --green-emeraude-950: #c3fad5; --green-emeraude-950-h: #77eda5; --green-emeraude-950-a: #6dd897;
+
+  --green-emeraude-975: #e3fdeb; --green-emeraude-975-h: #94f9b9; --green-emeraude-975-a: #6df1a3;
+
+  --green-emeraude-sun-425: #297254; --green-emeraude-sun-425-h: #3ea47a; --green-emeraude-sun-425-a: #49bc8d;
+
+  --green-emeraude-moon-753: #34cb6a; --green-emeraude-moon-753-h: #42fb84; --green-emeraude-moon-753-a: #80fda3;
+
+  --green-emeraude-main-632: #00a95f; --green-emeraude-main-632-h: #00e180; --green-emeraude-main-632-a: #00fb90;
+
+  --green-menthe-75: #15201e; --green-menthe-75-h: #30433f; --green-menthe-75-a: #3f5753;
+
+  --green-menthe-100: #1a2624; --green-menthe-100-h: #364b47; --green-menthe-100-a: #46605b;
+
+  --green-menthe-125: #1f2d2a; --green-menthe-125-h: #3c534e; --green-menthe-125-a: #4d6963;
+
+  --green-menthe-200: #223f3a; --green-menthe-200-h: #3d6a62; --green-menthe-200-a: #4b8178;
+
+  --green-menthe-850: #73e0cf; --green-menthe-850-h: #5bb5a7; --green-menthe-850-a: #4f9d91;
+
+  --green-menthe-925: #8bf8e7; --green-menthe-925-h: #6ed5c5; --green-menthe-925-a: #62bfb1;
+
+  --green-menthe-950: #bafaee; --green-menthe-950-h: #79e7d5; --green-menthe-950-a: #6fd3c3;
+
+  --green-menthe-975: #dffdf7; --green-menthe-975-h: #84f9e7; --green-menthe-975-a: #70ebd8;
+
+  --green-menthe-sun-373: #37635f; --green-menthe-sun-373-h: #53918c; --green-menthe-sun-373-a: #62a9a2;
+
+  --green-menthe-moon-652: #21ab8e; --green-menthe-moon-652-h: #2eddb8; --green-menthe-moon-652-a: #34f4cc;
+
+  --green-menthe-main-548: #009081; --green-menthe-main-548-h: #00c7b3; --green-menthe-main-548-a: #00e2cb;
+
+  --green-archipel-75: #152021; --green-archipel-75-h: #2f4345; --green-archipel-75-a: #3f5759;
+
+  --green-archipel-100: #1a2628; --green-archipel-100-h: #364a4e; --green-archipel-100-a: #465f63;
+
+  --green-archipel-125: #1f2c2e; --green-archipel-125-h: #3c5255; --green-archipel-125-a: #4d676b;
+
+  --green-archipel-200: #233e41; --green-archipel-200-h: #3e686d; --green-archipel-200-a: #4d7f85;
+
+  --green-archipel-850: #60e0eb; --green-archipel-850-h: #4cb4bd; --green-archipel-850-a: #419ca4;
+
+  --green-archipel-925: #a6f2fa; --green-archipel-925-h: #62dbe5; --green-archipel-925-a: #58c5cf;
+
+  --green-archipel-950: #c7f6fc; --green-archipel-950-h: #64ecf8; --green-archipel-950-a: #5bd8e3;
+
+  --green-archipel-975: #e5fbfd; --green-archipel-975-h: #99f2f8; --green-archipel-975-a: #73e9f0;
+
+  --green-archipel-sun-391: #006a6f; --green-archipel-sun-391-h: #009fa7; --green-archipel-sun-391-a: #00bbc3;
+
+  --green-archipel-moon-716: #34bab5; --green-archipel-moon-716-h: #43e9e2; --green-archipel-moon-716-a: #4cfdf6;
+
+  --green-archipel-main-557: #009099; --green-archipel-main-557-h: #00c6d2; --green-archipel-main-557-a: #00e0ee;
+
+  --blue-ecume-75: #171d2f; --blue-ecume-75-h: #333e5e; --blue-ecume-75-a: #445179;
+
+  --blue-ecume-100: #1d2437; --blue-ecume-100-h: #3b4767; --blue-ecume-100-a: #4c5b83;
+
+  --blue-ecume-125: #222940; --blue-ecume-125-h: #424d73; --blue-ecume-125-a: #536190;
+
+  --blue-ecume-200: #273962; --blue-ecume-200-h: #4561a1; --blue-ecume-200-a: #5576c2;
+
+  --blue-ecume-850: #bfccfb; --blue-ecume-850-h: #8ba7f8; --blue-ecume-850-a: #6b93f6;
+
+  --blue-ecume-925: #dee5fd; --blue-ecume-925-h: #b4c5fb; --blue-ecume-925-a: #99b3f9;
+
+  --blue-ecume-950: #e9edfe; --blue-ecume-950-h: #c5d0fc; --blue-ecume-950-a: #adbffc;
+
+  --blue-ecume-975: #f4f6fe; --blue-ecume-975-h: #d7dffb; --blue-ecume-975-a: #c3cffa;
+
+  --blue-ecume-sun-247: #2f4077; --blue-ecume-sun-247-h: #4e68bb; --blue-ecume-sun-247-a: #667dcf;
+
+  --blue-ecume-moon-675: #869ece; --blue-ecume-moon-675-h: #b8c5e2; --blue-ecume-moon-675-a: #ced6ea;
+
+  --blue-ecume-main-400: #465f9d; --blue-ecume-main-400-h: #6f89d1; --blue-ecume-main-400-a: #8b9eda;
+
+  --blue-cumulus-75: #171e2b; --blue-cumulus-75-h: #333f56; --blue-cumulus-75-a: #43536f;
+
+  --blue-cumulus-100: #1c2433; --blue-cumulus-100-h: #3a4761; --blue-cumulus-100-a: #4a5b7b;
+
+  --blue-cumulus-125: #212a3a; --blue-cumulus-125-h: #404f69; --blue-cumulus-125-a: #516384;
+
+  --blue-cumulus-200: #263b58; --blue-cumulus-200-h: #436491; --blue-cumulus-200-a: #5279af;
+
+  --blue-cumulus-850: #b6cffb; --blue-cumulus-850-h: #76adf8; --blue-cumulus-850-a: #4a9df7;
+
+  --blue-cumulus-925: #dae6fd; --blue-cumulus-925-h: #a9c8fb; --blue-cumulus-925-a: #8ab8f9;
+
+  --blue-cumulus-950: #e6eefe; --blue-cumulus-950-h: #bcd3fc; --blue-cumulus-950-a: #9fc3fc;
+
+  --blue-cumulus-975: #f3f6fe; --blue-cumulus-975-h: #d3dffc; --blue-cumulus-975-a: #bed0fa;
+
+  --blue-cumulus-sun-368: #3558a2; --blue-cumulus-sun-368-h: #5982e0; --blue-cumulus-sun-368-a: #7996e6;
+
+  --blue-cumulus-moon-732: #7ab1e8; --blue-cumulus-moon-732-h: #bad2f2; --blue-cumulus-moon-732-a: #d2e2f6;
+
+  --blue-cumulus-main-526: #417dc4; --blue-cumulus-main-526-h: #74a5ec; --blue-cumulus-main-526-a: #96b8f0;
+
+  --purple-glycine-75: #251a24; --purple-glycine-75-h: #4c394a; --purple-glycine-75-a: #634a60;
+
+  --purple-glycine-100: #2c202b; --purple-glycine-100-h: #554053; --purple-glycine-100-a: #6c536a;
+
+  --purple-glycine-125: #332632; --purple-glycine-125-h: #5d485c; --purple-glycine-125-a: #755b73;
+
+  --purple-glycine-200: #502e4d; --purple-glycine-200-h: #855080; --purple-glycine-200-a: #a1629c;
+
+  --purple-glycine-850: #fbb8f6; --purple-glycine-850-h: #f983f1; --purple-glycine-850-a: #f767ef;
+
+  --purple-glycine-925: #fddbfa; --purple-glycine-925-h: #fbaff5; --purple-glycine-925-a: #fa96f2;
+
+  --purple-glycine-950: #fee7fc; --purple-glycine-950-h: #fdc0f8; --purple-glycine-950-a: #fca8f6;
+
+  --purple-glycine-975: #fef3fd; --purple-glycine-975-h: #fcd4f8; --purple-glycine-975-a: #fabff5;
+
+  --purple-glycine-sun-319: #6e445a; --purple-glycine-sun-319-h: #a66989; --purple-glycine-sun-319-a: #bb7f9e;
+
+  --purple-glycine-moon-630: #ce70cc; --purple-glycine-moon-630-h: #dfa4dd; --purple-glycine-moon-630-a: #e7bbe6;
+
+  --purple-glycine-main-494: #a558a0; --purple-glycine-main-494-h: #d282cd; --purple-glycine-main-494-a: #db9cd6;
+
+  --pink-macaron-75: #261b19; --pink-macaron-75-h: #4e3a37; --pink-macaron-75-a: #654c48;
+
+  --pink-macaron-100: #2e211f; --pink-macaron-100-h: #58423f; --pink-macaron-100-a: #705551;
+
+  --pink-macaron-125: #352724; --pink-macaron-125-h: #614a45; --pink-macaron-125-a: #795d57;
+
+  --pink-macaron-200: #52312a; --pink-macaron-200-h: #885449; --pink-macaron-200-a: #a5675a;
+
+  --pink-macaron-850: #fcc0b4; --pink-macaron-850-h: #fb9175; --pink-macaron-850-a: #fa794a;
+
+  --pink-macaron-925: #fddfda; --pink-macaron-925-h: #fbb8ab; --pink-macaron-925-a: #faa18d;
+
+  --pink-macaron-950: #fee9e6; --pink-macaron-950-h: #fdc6bd; --pink-macaron-950-a: #fcb0a2;
+
+  --pink-macaron-975: #fef4f2; --pink-macaron-975-h: #fcd8d0; --pink-macaron-975-a: #fac5b8;
+
+  --pink-macaron-sun-406: #8d533e; --pink-macaron-sun-406-h: #ca795c; --pink-macaron-sun-406-a: #e08e73;
+
+  --pink-macaron-moon-833: #ffb7ae; --pink-macaron-moon-833-h: #ffe0dc; --pink-macaron-moon-833-a: #fff0ee;
+
+  --pink-macaron-main-689: #e18b76; --pink-macaron-main-689-h: #eabab1; --pink-macaron-main-689-a: #f0cfc9;
+
+  --pink-tuile-75: #281b19; --pink-tuile-75-h: #513a37; --pink-tuile-75-a: #694c48;
+
+  --pink-tuile-100: #2f211f; --pink-tuile-100-h: #5a423e; --pink-tuile-100-a: #725550;
+
+  --pink-tuile-125: #372624; --pink-tuile-125-h: #644845; --pink-tuile-125-a: #7d5b57;
+
+  --pink-tuile-200: #55302a; --pink-tuile-200-h: #8d5349; --pink-tuile-200-a: #ab665a;
+
+  --pink-tuile-850: #fcbfb7; --pink-tuile-850-h: #fb907d; --pink-tuile-850-a: #fa7659;
+
+  --pink-tuile-925: #fddfdb; --pink-tuile-925-h: #fbb8ad; --pink-tuile-925-a: #faa191;
+
+  --pink-tuile-950: #fee9e7; --pink-tuile-950-h: #fdc6c0; --pink-tuile-950-a: #fcb0a7;
+
+  --pink-tuile-975: #fef4f3; --pink-tuile-975-h: #fcd7d3; --pink-tuile-975-a: #fac4be;
+
+  --pink-tuile-sun-425: #a94645; --pink-tuile-sun-425-h: #d5706f; --pink-tuile-sun-425-a: #da8a89;
+
+  --pink-tuile-moon-750: #ff9575; --pink-tuile-moon-750-h: #ffc4b7; --pink-tuile-moon-750-a: #ffd8d0;
+
+  --pink-tuile-main-556: #ce614a; --pink-tuile-main-556-h: #e89082; --pink-tuile-main-556-a: #eba89f;
+
+  --yellow-tournesol-75: #221d11; --yellow-tournesol-75-h: #473e29; --yellow-tournesol-75-a: #5c5136;
+
+  --yellow-tournesol-100: #292416; --yellow-tournesol-100-h: #4f472f; --yellow-tournesol-100-a: #655b3d;
+
+  --yellow-tournesol-125: #302a1a; --yellow-tournesol-125-h: #584e34; --yellow-tournesol-125-a: #6f6342;
+
+  --yellow-tournesol-200: #43391a; --yellow-tournesol-200-h: #706030; --yellow-tournesol-200-a: #88753c;
+
+  --yellow-tournesol-850: #efcb3a; --yellow-tournesol-850-h: #c1a42d; --yellow-tournesol-850-a: #a88e26;
+
+  --yellow-tournesol-925: #fde39c; --yellow-tournesol-925-h: #e9c53b; --yellow-tournesol-925-a: #d3b235;
+
+  --yellow-tournesol-950: #feecc2; --yellow-tournesol-950-h: #fbd335; --yellow-tournesol-950-a: #e6c130;
+
+  --yellow-tournesol-975: #fef6e3; --yellow-tournesol-975-h: #fce086; --yellow-tournesol-975-a: #f5d24b;
+
+  --yellow-tournesol-sun-407: #716043; --yellow-tournesol-sun-407-h: #a28a62; --yellow-tournesol-sun-407-a: #ba9f72;
+
+  --yellow-tournesol-moon-922: #ffe552; --yellow-tournesol-moon-922-h: #e1c700; --yellow-tournesol-moon-922-a: #cab300;
+
+  --yellow-tournesol-main-731: #c8aa39; --yellow-tournesol-main-731-h: #967f29; --yellow-tournesol-main-731-a: #7d6a20;
+
+  --yellow-moutarde-75: #231d14; --yellow-moutarde-75-h: #483e2e; --yellow-moutarde-75-a: #5e513d;
+
+  --yellow-moutarde-100: #2a2319; --yellow-moutarde-100-h: #514534; --yellow-moutarde-100-a: #685944;
+
+  --yellow-moutarde-125: #30291d; --yellow-moutarde-125-h: #584d39; --yellow-moutarde-125-a: #6f6149;
+
+  --yellow-moutarde-200: #453820; --yellow-moutarde-200-h: #735f39; --yellow-moutarde-200-a: #8c7447;
+
+  --yellow-moutarde-850: #fcc63a; --yellow-moutarde-850-h: #cb9f2d; --yellow-moutarde-850-a: #b18a26;
+
+  --yellow-moutarde-925: #fde2b5; --yellow-moutarde-925-h: #f6c43c; --yellow-moutarde-925-a: #dfb135;
+
+  --yellow-moutarde-950: #feebd0; --yellow-moutarde-950-h: #fdcd6d; --yellow-moutarde-950-a: #f4be30;
+
+  --yellow-moutarde-975: #fef5e8; --yellow-moutarde-975-h: #fcdca3; --yellow-moutarde-975-a: #fbcd64;
+
+  --yellow-moutarde-sun-348: #695240; --yellow-moutarde-sun-348-h: #9b7b61; --yellow-moutarde-sun-348-a: #b58f72;
+
+  --yellow-moutarde-moon-860: #ffca00; --yellow-moutarde-moon-860-h: #cda200; --yellow-moutarde-moon-860-a: #b28c00;
+
+  --yellow-moutarde-main-679: #c3992a; --yellow-moutarde-main-679-h: #f5c137; --yellow-moutarde-main-679-a: #fcd17b;
+
+  --orange-terre-battue-75: #281a16; --orange-terre-battue-75-h: #513932; --orange-terre-battue-75-a: #6a4b42;
+
+  --orange-terre-battue-100: #31201c; --orange-terre-battue-100-h: #5d403a; --orange-terre-battue-100-a: #77534a;
+
+  --orange-terre-battue-125: #382621; --orange-terre-battue-125-h: #664840; --orange-terre-battue-125-a: #7f5b51;
+
+  --orange-terre-battue-200: #543125; --orange-terre-battue-200-h: #8b5442; --orange-terre-battue-200-a: #a96751;
+
+  --orange-terre-battue-850: #fcc0b0; --orange-terre-battue-850-h: #fb926b; --orange-terre-battue-850-a: #fa7a35;
+
+  --orange-terre-battue-925: #fddfd8; --orange-terre-battue-925-h: #fbb8a5; --orange-terre-battue-925-a: #faa184;
+
+  --orange-terre-battue-950: #fee9e5; --orange-terre-battue-950-h: #fdc6ba; --orange-terre-battue-950-a: #fcb09e;
+
+  --orange-terre-battue-975: #fef4f2; --orange-terre-battue-975-h: #fcd8d0; --orange-terre-battue-975-a: #fac5b8;
+
+  --orange-terre-battue-sun-370: #755348; --orange-terre-battue-sun-370-h: #ab7b6b; --orange-terre-battue-sun-370-a: #c68f7d;
+
+  --orange-terre-battue-moon-672: #ff732c; --orange-terre-battue-moon-672-h: #ffa48b; --orange-terre-battue-moon-672-a: #ffbbab;
+
+  --orange-terre-battue-main-645: #e4794a; --orange-terre-battue-main-645-h: #f1a892; --orange-terre-battue-main-645-a: #f4bfb1;
+
+  --brown-cafe-creme-75: #211d16; --brown-cafe-creme-75-h: #453e31; --brown-cafe-creme-75-a: #5a5141;
+
+  --brown-cafe-creme-100: #28241c; --brown-cafe-creme-100-h: #4e4739; --brown-cafe-creme-100-a: #635b4a;
+
+  --brown-cafe-creme-125: #2e2a21; --brown-cafe-creme-125-h: #554e3f; --brown-cafe-creme-125-a: #6b6351;
+
+  --brown-cafe-creme-200: #423925; --brown-cafe-creme-200-h: #6e6041; --brown-cafe-creme-200-a: #867550;
+
+  --brown-cafe-creme-850: #e7ca8e; --brown-cafe-creme-850-h: #bca473; --brown-cafe-creme-850-a: #a48f64;
+
+  --brown-cafe-creme-925: #f4e3c7; --brown-cafe-creme-925-h: #e1c386; --brown-cafe-creme-925-a: #ccb078;
+
+  --brown-cafe-creme-950: #f7ecdb; --brown-cafe-creme-950-h: #edce94; --brown-cafe-creme-950-a: #dabd84;
+
+  --brown-cafe-creme-975: #fbf6ed; --brown-cafe-creme-975-h: #f2deb6; --brown-cafe-creme-975-a: #eacf91;
+
+  --brown-cafe-creme-sun-383: #685c48; --brown-cafe-creme-sun-383-h: #97866a; --brown-cafe-creme-sun-383-a: #ae9b7b;
+
+  --brown-cafe-creme-moon-885: #ecd7a2; --brown-cafe-creme-moon-885-h: #c5b386; --brown-cafe-creme-moon-885-a: #af9f77;
+
+  --brown-cafe-creme-main-782: #d1b781; --brown-cafe-creme-main-782-h: #a38e63; --brown-cafe-creme-main-782-a: #8b7954;
+
+  --brown-caramel-75: #251c16; --brown-caramel-75-h: #4c3c31; --brown-caramel-75-a: #624e41;
+
+  --brown-caramel-100: #2c221c; --brown-caramel-100-h: #554439; --brown-caramel-100-a: #6c574a;
+
+  --brown-caramel-125: #332821; --brown-caramel-125-h: #5d4b40; --brown-caramel-125-a: #755f51;
+
+  --brown-caramel-200: #4b3525; --brown-caramel-200-h: #7c5a41; --brown-caramel-200-a: #976e51;
+
+  --brown-caramel-850: #eac7b2; --brown-caramel-850-h: #d69e75; --brown-caramel-850-a: #bc8a66;
+
+  --brown-caramel-925: #f3e2d9; --brown-caramel-925-h: #e7bea6; --brown-caramel-925-a: #e1a982;
+
+  --brown-caramel-950: #f7ebe5; --brown-caramel-950-h: #eccbb9; --brown-caramel-950-a: #e6b79a;
+
+  --brown-caramel-975: #fbf5f2; --brown-caramel-975-h: #f1dbcf; --brown-caramel-975-a: #ecc9b5;
+
+  --brown-caramel-sun-425: #845d48; --brown-caramel-sun-425-h: #bb8568; --brown-caramel-sun-425-a: #d69978;
+
+  --brown-caramel-moon-901: #fbd8ab; --brown-caramel-moon-901-h: #efb547; --brown-caramel-moon-901-a: #d6a23e;
+
+  --brown-caramel-main-648: #c08c65; --brown-caramel-main-648-h: #e6b594; --brown-caramel-main-648-a: #eccab6;
+
+  --brown-opera-75: #241c17; --brown-opera-75-h: #4a3c33; --brown-opera-75-a: #604f44;
+
+  --brown-opera-100: #2b221c; --brown-opera-100-h: #53443a; --brown-opera-100-a: #6a574a;
+
+  --brown-opera-125: #322821; --brown-opera-125-h: #5c4b40; --brown-opera-125-a: #735f51;
+
+  --brown-opera-200: #493625; --brown-opera-200-h: #795c41; --brown-opera-200-a: #937050;
+
+  --brown-opera-850: #eac7ad; --brown-opera-850-h: #d09f74; --brown-opera-850-a: #b68b65;
+
+  --brown-opera-925: #f3e2d7; --brown-opera-925-h: #e7bfa0; --brown-opera-925-a: #deaa7e;
+
+  --brown-opera-950: #f7ece4; --brown-opera-950-h: #eccdb3; --brown-opera-950-a: #e6ba90;
+
+  --brown-opera-975: #fbf5f2; --brown-opera-975-h: #f1dbcf; --brown-opera-975-a: #ecc9b5;
+
+  --brown-opera-sun-395: #745b47; --brown-opera-sun-395-h: #a78468; --brown-opera-sun-395-a: #c09979;
+
+  --brown-opera-moon-820: #e6be92; --brown-opera-moon-820-h: #f2e2d3; --brown-opera-moon-820-a: #f8f0e9;
+
+  --brown-opera-main-680: #bd987a; --brown-opera-main-680-h: #e1c0a8; --brown-opera-main-680-a: #e9d4c5;
+
+  --beige-gris-galet-75: #211d19; --beige-gris-galet-75-h: #453e37; --beige-gris-galet-75-a: #595148;
+
+  --beige-gris-galet-100: #28231f; --beige-gris-galet-100-h: #4e453f; --beige-gris-galet-100-a: #635950;
+
+  --beige-gris-galet-125: #2e2924; --beige-gris-galet-125-h: #554d45; --beige-gris-galet-125-a: #6b6157;
+
+  --beige-gris-galet-200: #433829; --beige-gris-galet-200-h: #705f47; --beige-gris-galet-200-a: #887358;
+
+  --beige-gris-galet-850: #e0cab0; --beige-gris-galet-850-h: #baa48a; --beige-gris-galet-850-a: #a38f78;
+
+  --beige-gris-galet-925: #eee4d9; --beige-gris-galet-925-h: #dbc3a4; --beige-gris-galet-925-a: #c6b094;
+
+  --beige-gris-galet-950: #f3ede5; --beige-gris-galet-950-h: #e1d0b5; --beige-gris-galet-950-a: #d1bea2;
+
+  --beige-gris-galet-975: #f9f6f2; --beige-gris-galet-975-h: #eadecd; --beige-gris-galet-975-a: #e1ceb1;
+
+  --beige-gris-galet-sun-407: #6a6156; --beige-gris-galet-sun-407-h: #988b7c; --beige-gris-galet-sun-407-a: #afa08f;
+
+  --beige-gris-galet-moon-821: #d0c3b7; --beige-gris-galet-moon-821-h: #eae5e1; --beige-gris-galet-moon-821-a: #f4f2f0;
+
+  --beige-gris-galet-main-702: #aea397; --beige-gris-galet-main-702-h: #d5cabd; --beige-gris-galet-main-702-a: #e2dbd4;
+}
+
+//
+// --- Background decision mapping
+
+// Fond de blocs ou de sections
+@background-alt-grey: var(--grey-75);
+@background-alt-grey-hover: var(--grey-75-h);
+@background-alt-grey-active: var(--grey-75-a);
+// Fond de bloc de page aux couleurs de l’État
+@background-alt-blue-france: var(--blue-france-75);
+// Fond de composant contrastant
+@background-contrast-grey: var(--grey-100);
+@background-contrast-grey-hover: var(--grey-100-h);
+@background-contrast-grey-active: var(--grey-100-a);
+//Fond de composant en relief
+@background-elevated-grey: var(--grey-75);
+// Fond de composant cliquable important & portant l'identité de l'état
+@background-action-high-blue-france: var(--blue-france-625);
+@background-action-high-blue-france-hover: var(--blue-france-625-h);
+@background-action-high-blue-france-active: var(--blue-france-625-a);
+// Fond de composant cliquable mineur & portant l'identité de l'état
+@background-action-low-blue-france: var(--blue-france-125);
+@background-action-low-blue-france-hover: var(--blue-france-125-h);
+@background-action-low-blue-france-active: var(--blue-france-125-a);
+// Fond de composant actif et portant l'identité de l'état
+@background-active-blue-france: var(--blue-france-625);
+// Fond de composant ouvert et portant l'identité de l'état
+@background-open-blue-france: var(--blue-france-125);
+// Fond de composant désactivé
+@background-disabled-grey: var(--grey-125);
+// Fond de composant en état d'erreur
+@background-flat-error: var(--error-625);
+// Fond de composant en état d'avertissement
+@background-flat-warning: var(--warning-625);
+// Fond de composant en état de succès
+@background-flat-success: var(--success-625);
+// Fond de composant en état d'informaton
+@background-flat-info: var(--info-625);
+// Fond de page et de composant par défaut
+@background-default-grey: var(--grey-50);
+@background-default-grey-hover: var(--grey-50-h);
+@background-default-grey-active: var(--grey-50-a);
+
+//
+// --- Texts decision mapping
+
+// Titre ou élément équivalent
+@text-title-grey: var(--grey-1000);
+// Titre portant l'identité de l'état
+@text-title-blue-france: var(--blue-france-625);
+// Corps de texte
+@text-default-grey: var(--grey-850);
+// Texte de mention ou de détail
+@text-mention-grey: var(--grey-625);
+// Texte de libellé
+@text-label-grey: var(--grey-1000);
+// Texte cliquable important et portant l'identité de l'état
+@text-action-high-blue-france: var(--blue-france-625);
+// Texte cliquable important
+@text-action-high-grey: var(--grey-1000);
+// Texte ou icône contrastant en nuances de gris
+@text-inverted-grey: var(--grey-50);
+// Texte ou icône contrastant portant l'identité de l'état
+@text-inverted-blue-france: var(--blue-france-sun-113);
+// Texte actif portant l'identité de l'état
+@text-active-blue-france: var(--blue-france-625);
+// Texte actif neutre
+@text-active-grey: var(--grey-1000);
+// Texte désactivé
+@text-disabled-grey: var(--grey-425);
+// Texte ou icône en état d'erreur
+@text-default-error: var(--error-625);
+// Texte ou icône en état de succès
+@text-default-success: var(--success-625);
+// Texte ou icône en état d'info
+@text-default-info: var(--info-625);
+
+//
+// --- Typographie.s
+//
+// Marianne (light, regular, bold) et ses versions italic (light italic, regular italic, bold italic)
+// -> substituable par Arial
+//
+// Spectral (regular & extra-bold)
+// -> substituable par Georgia
+
+//
+// --- Espacement
+//
+// "v" ~ 4-multiple
+// "n" ~ negative
+// 1rem ~ 16px
+@n8v:-2rem; @n7v:-1.75rem; @n6v:-1.5rem; @n5v:-1.25rem; @n4v:-1rem; @n3v:-0.75rem; @n2v:-0.5rem; @n1-5v:-0.375rem; @n1v:-0.25rem; @n0-5v:-0.125rem; @n0-25v:-0.0625rem;
+@0v: 0;
+@0-25v:0.0625rem; @0-5v:0.125rem; @1v:0.25rem; @1-25v:0.3rem; @1-5v:0.375rem; @2v:0.5rem; @2-5v:0.675rem; @3v:0.75rem; @3-5v:0.875rem; @4v:1rem; @4-5v:1.125rem; @5v:1.25rem; @6v:1.5rem; @7v:1.75rem; @8v:2rem;
+@9v:2.25rem; @10v:2.5rem; @11v:2.75rem; @12v:3rem; @13v:3.25rem; @14v:3.5rem; @15v:3.75rem; @16v:4rem; @17v:4.25rem; @18v:4.5rem;
+@19v:4.75rem; @20v:5rem; @21v:5.25rem; @22v:5.5rem; @23v:5.75rem; @24v:6rem; @25v:6.25rem; @26v:6.5rem; @27v:6.75rem; @28v:7rem;
+@29v:7.25rem; @30v:7.5rem; @31v:7.75rem; @32v:8rem;
+
+// 
+// --- Bordures
+//
+@border-color-grey: var(--grey-175);
+@border-color-focus: var(--focus-525);
+// styles
+@border-default-grey: solid @0-25v @border-color-grey;
+@border-disabled-grey: solid @0-25v @text-disabled-grey;
+@border-text-grey: solid @0-25v @text-default-grey;
+@border-action-blue: solid @0-25v @text-action-high-blue-france;
+@border-action-grey: solid @0-25v @text-action-high-grey;
+@border-thick-grey: solid @0-5v @border-color-grey;
+@border-thick-text-grey: solid @0-5v @text-default-grey;
+@border-thick-action-blue: solid @0-5v @text-action-high-blue-france;
+@border-thick-action-grey: solid @0-5v @text-action-high-grey;
+@border-focus: solid @0-25v @border-color-focus;
+
+// Margin bottoms
+// Titles
+@title-spacing: @6v;
+// Titres alternatif
+@title-alt-spacing: @8v;
+// Paragraphes (xl - xs)
+@paragraph-spacing: @6v;
+
+//
+// --- Ombres & Elévations
+
+// match with grey-1000 (default), grey-975 (alt) & grey-950 (contrast) backgrounds
+@raised: @0v @0-5v @1-5v @0v rgba(0,0,18, 0.16);
+// same
+@overlap: @0v @1v @3v @0v rgba(0,0,18, 0.16);
+// only match with grey-1000, represents elements on very top
+@detached: @0v @1-5v  @4-5v @0v rgba(0,0,18, 0.16);
+
+
+/*
+  Overriding native simplicité color variables
+*/
+@background-dark:  @background-alt-grey;
+@background-light: @background-default-grey;
+
+//===============================================================================================================================================
+
+// --- Persistent styling (simplicité's UI)
+
+* {
+  border-radius: @0v !important;
+  box-shadow: none !important;
+}
+
+*:focus {
+  outline: @border-focus !important;
+  outline-offset: @0-5v;
+}
+
+body {
+  background: @background-default-grey !important;
+  color: @text-default-grey !important;
+}
+
+p {
+  margin-bottom: @paragraph-spacing !important;
+}
+
+header.header, footer.footer, #menu, main#work {
+  background: @background-default-grey;
+}
+
+.card {
+  background: @background-default-grey !important;
+  box-shadow: @raised !important;
+
+  .card, .card-header, .card-body, .card-footer {
+    background-color: @background-default-grey !important;
+    border-color: @border-default-grey;
+  }
+
+}
+
+.form-control, .form-check-input {
+  background-color: @background-default-grey;
+}
+
+.objlinks .tab-content .card-body {
+  padding: @4v @5v !important;
+}
+
+.dropdown-menu {
+  background-color: @background-default-grey !important;
+  box-shadow: @overlap !important;
+  border: @border-default-grey !important;
+}
+
+.search .nav {
+  background-color: @background-default-grey;
+}
+
+.top-bar { // absolute units to ease calculations...
+  height: 80px;
+  box-shadow: @raised !important;
+  .header {
+    height: 80px;
+    border-bottom: @border-default-grey;
+  }
+
+  /*&:not(:has(.bar-bookmarks)) .header {
+    box-shadow: @raised !important;
+  }*/
+}
+.middle-bar { top: 80px; }
+.footer-bar .footer { border-top: @border-default-grey; }
+
+.bar-bookmarks {
+  padding: 0px 32px;
+  height: 40px;
+  a.bookmark {
+    color: @text-action-high-grey;
+    padding: 4px 4px 4px 0px;
+    height: 100%;
+    border-bottom: solid @0-25v transparent;
+    &:hover {
+      color: @text-action-high-blue-france !important;
+      border-bottom-color: @text-action-high-blue-france;
+      background: transparent;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) { // calculations for bookmarks bar viz/hide
+  .bookmarks-top {
+    .top-bar {
+      height: 120px;
+      .bar-bookmarks {
+        border-bottom: @border-default-grey;
+      }
+    }
+    .middle-bar { top: 120px; }
+  }
+  .bookmarks-bottom {
+    .middle-bar { bottom: 60px; }
+    .footer-bar {
+      height: 60px;
+      .bar-bookmarks {
+        border-top: @border-default-grey;
+      }
+    }
+  }
+}
+
+// --- Detailled styling (dsfr components mapped to simplicité's usages)
+
+/* Lien */
+a:where(:not([class]), [class=""]):not(:has(img),:has(i)):not([data-item]) { // narrowed to raw links only
+  // :has(span),
+  color: @text-action-high-blue-france;
+  text-decoration: none !important;
+  border-bottom: @border-action-blue;
+  &:hover {
+    color: @text-action-high-blue-france !important;
+    border-bottom-width: @0-5v;
+  }
+  &:active {
+    border-bottom-width: @0-5v;
+    background: @background-alt-grey-hover;
+  }
+  &:focus {
+    border-bottom-color: transparent;
+    outline: @border-focus;
+    outline-offset: @0-5v;
+  }
+}
+
+/* En-tête */
+header.header {
+  .logged-scope, .logged-user { // user actions
+    .btn-header {
+      img { // images inside buttons (specific enough ?)
+        border: none;
+        background: transparent !important;
+      }
+      &:hover {
+        background: @background-default-grey-hover;
+      }
+    }
+
+    &:has(.dropdown-menu.show) {
+      .btn-header {
+        background: @background-action-low-blue-france;
+        color: @text-action-high-blue-france;
+      }
+    }
+  }
+
+  .logged-scope .scope-name, .logged-user .user-name {
+    margin-left: @n1v;
+  }
+
+  div.apps { // scopes dropdown (consistency) -> Menu déroulant
+    flex-direction: column;
+    margin: @0v;
+    padding: @0v;
+    button.thumbnail {
+      background-color: @background-default-grey;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: @0-5v @2v;
+      margin: @0v;
+      border: none;
+      border-bottom: @border-default-grey;
+      color: @text-action-high-blue-france;
+
+      img {
+        width: @5v; // approx 20px ...
+      }
+
+      .caption {
+        margin-top: @0v;
+        font-size: @3-5v; // approx 14px
+      }
+
+      &:hover {
+        background-color: @background-action-low-blue-france;
+      }
+    }
+  }
+}
+
+/* Menu déroulant */
+.btn-group {
+  &:has(.dropdown-menu.show) > a { // dropdowns are triggered by a clickable <a/>
+    background: @background-action-low-blue-france;
+    color: @text-action-high-blue-france;
+  }
+}
+.dropdown.show {
+  background: @background-action-low-blue-france;
+  color: @text-action-high-blue-france;
+}
+
+.dropdown-menu {
+  li {
+    color: @text-action-high-blue-france;
+    border-bottom: @border-default-grey;
+    a {
+      color: @text-action-high-blue-france;
+      .btn-pin {
+        padding: 0 @1v !important;
+        &:hover {
+          background-color: @background-contrast-grey;
+        }
+      }
+    }
+    &:hover {
+      color: @text-action-high-blue-france;
+      background: @background-action-low-blue-france;
+      a {
+        color: @text-action-high-blue-france;
+      }
+    }
+
+    &.dropdown-divider { display: none; } // getting rid of those
+  }
+
+  input.form-check-input { // checkbox/radio in dropdown
+    border: @border-action-blue !important;
+    width: @4-5v !important;
+    height: @4-5v !important;
+    &:checked {
+      background-color: @background-action-high-blue-france !important;
+    }
+    &:focus {
+      outline: @border-focus;
+      outline-offset: @0-5v;
+    }
+  }
+}
+
+/* En-tête connectée (user) */
+.logged-user ul.dropdown-menu { // different from usual dropdown (but look-alike)
+  li {
+    border-top: none !important;
+
+    a {
+      color: @text-default-grey;
+      border-bottom: none !important;
+      &:hover {
+        color: @text-default-grey !important;
+      }
+    }
+    &:hover { background: @background-contrast-grey; }
+  }
+
+  .user-profile {
+    min-width: 250px;
+    padding: @1v @2v;
+  }
+  .languages, .user-logout {
+    background: transparent;
+    select { background: transparent; } // spe to languages
+    &:hover { background: @background-contrast-grey; }
+  }
+  .zoom-bar .zoom-compact {
+    padding: @1v @1-5v;
+    &:hover { background: @background-contrast-grey; }
+  }
+
+  .user-logout {
+    text-align: center;
+    padding: @2v @0v;
+
+    a {
+      padding: @1v;
+      width: 80%;
+      border: @border-default-grey;
+      border-bottom: @border-default-grey !important;
+      color: @text-action-high-blue-france;
+      &:hover {
+        color: @text-action-high-blue-france !important;
+        border-color: @text-action-high-blue-france !important;
+        background: @background-default-grey-hover;
+      }
+    }
+  }
+}
+
+/* Accordéon */
+.card {
+  border-color: @border-color-grey;
+  .card:has(.collapse:not(.show)) {
+    box-shadow: none !important;
+    border-right-color: transparent !important;
+    border-left-color: transparent !important;
+
+    .card-header {
+      &.collapsed {
+        border-bottom-color: transparent !important;
+        &:hover { background-color: @background-default-grey-hover; }
+      }
+    }
+  }
+
+  .card-header[data-bs-toggle="collapse"]:not(.collapsed) {
+    background-color: @background-open-blue-france !important;
+    & > span {
+      color: @text-action-high-blue-france !important;
+    }
+
+    &::after {
+      color: @text-default-grey;
+    }
+  }
+}
+
+/* Alerte */
+.alert { // no titltes -> sm
+  i { display:none !important; } // replaced by the "::before" ...
+  
+  &::before { // override existing icon -> matching dsfr alert's layout
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--grey-1000); // falllback
+    height: 100%;
+    width: @8v; // spacing + icon (estimated/controled) size...
+    /* ... tricky part ... */
+    background-repeat: no-repeat;
+    background-position: @2v @3v;
+    background-size: 50%;
+  }
+
+  background: @background-default-grey;
+  color: @text-action-high-grey !important;
+  border: solid @0-25v var(--grey-1000); // falllback (light-only)
+  padding-left: @10v !important; // 8v + 4px
+
+  &.alert-info {
+    border-color: @background-flat-info;
+    &::before {
+      background-color: @background-flat-info !important;
+      background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17 0H2C0.895431 0 0 0.895431 0 2V17C0 18.1046 0.895431 19 2 19H17C18.1046 19 19 18.1046 19 17V2C19 0.895431 18.1046 0 17 0ZM10.5 4.5H8.5V6.5H10.5V4.5ZM10.5 8.5H8.5V14.5H10.5V8.5Z' fill='%23161616'/%3E%3C/svg%3E");
+    }
+  }
+  &.alert-danger {
+    border-color: @background-flat-error;
+    &::before {
+      background-color: @background-flat-error !important;
+      background-image: url("data:image/svg+xml,%3Csvg width='22' height='19' viewBox='0 0 22 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M22 9.5L16.5 0H5.5L0 9.5L5.5 19H16.5L22 9.5ZM13.8281 5.25696L11.0001 8.08596L8.17208 5.25696L6.75708 6.67196L9.58608 9.49996L6.75708 12.328L8.17208 13.743L11.0001 10.914L13.8281 13.743L15.2431 12.328L12.4141 9.49996L15.2431 6.67196L13.8281 5.25696Z' fill='%23161616'/%3E%3C/svg%3E");
+    }
+  }
+  &.alert-warning {
+    border-color: @background-flat-warning;
+    &::before {
+      background-color: @background-flat-warning !important;
+      background-image: url("data:image/svg+xml,%3Csvg width='22' height='19' viewBox='0 0 22 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.392 0.499956L20.918 17C21.0966 17.3094 21.0966 17.6905 20.918 17.9999C20.7394 18.3093 20.4092 18.4999 20.052 18.5H0.999975C0.642714 18.4999 0.312595 18.3093 0.133968 17.9999C-0.0446583 17.6905 -0.0446559 17.3094 0.133975 17L9.65998 0.499956C9.83861 0.19058 10.1687 0 10.526 0C10.8832 0 11.2133 0.19058 11.392 0.499956ZM9.52597 13.5V15.5H11.526V13.5H9.52597ZM9.52597 6.49996V11.5H11.526V6.49996H9.52597Z' fill='%23161616'/%3E%3C/svg%3E");
+    }
+  }
+  &.alert-success {
+    border-color: @background-flat-success;
+    &::before {
+      background-color: @background-flat-success !important;
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9.003 14L16.073 6.929L14.659 5.515L9.003 11.172L6.174 8.343L4.76 9.757L9.003 14Z' fill='%23161616'/%3E%3C/svg%3E");
+    }
+  }
+}
+
+form > .alert {
+  margin: @3v @0v !important; // ZZZ better specs ? ZZZ
+}
+
+/* Badge */
+.badge {
+  padding: @2v;
+  border-radius: @1v;
+
+  &.status,  // contexted in main-menu
+  &.count,   // all others
+  &.filter { // specific to lists' headers
+    color: @text-default-info !important;
+    background: var(--info-100) !important;
+  }
+}
+
+.btn-shortcut > .badge, li[data-shortcut="Notifications"] > .badge {
+  color: var(--yellow-tournesol-moon-922) !important;
+  background: var(--yellow-tournesol-100) !important;
+}
+
+.filters > .filter {
+  color: @text-default-info !important;
+  background: var(--info-100) !important;
+  border: none;
+  padding: @2v;
+  border-radius: @1v !important;
+  i:hover { color: var(--info-625-h); }
+  i:active { color: var(--info-625-a); }
+}
+
+button .badge {
+  top: @n4v !important;
+  right: @n1v !important;
+}
+
+/* Bandeau d'information */
+.alert.alert-help {
+  // != form alert -> no icon + persistent
+  &::before {
+    width: @8v;
+    background-color: transparent !important;
+    background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17 0H2C0.895431 0 0 0.895431 0 2V17C0 18.1046 0.895431 19 2 19H17C18.1046 19 19 18.1046 19 17V2C19 0.895431 18.1046 0 17 0ZM10.5 4.5H8.5V6.5H10.5V4.5ZM10.5 8.5H8.5V14.5H10.5V8.5Z' fill='%23518fff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: @2v @2-5v;
+  }
+  border: none;
+  background: var(--info-100);
+  color: @text-default-info !important;
+  margin: @0v !important;
+  margin-bottom: @2v !important;
+  padding: @2v;
+  padding-left: @8v !important;
+
+  p { margin-bottom: @0v !important; }
+}
+
+/* Barre.s de recherche */
+// Multiple contexts -> [ header | menu | form-header | field-search ]
+.header {
+  .index {
+    border: none;
+
+    .searchbox { width: 12.5rem; }
+    .searchbox.focus { width: 20rem; }
+
+    .searchbox, .searchbox.focus {
+      border-top-left-radius: @1v !important;
+      border-top-right-radius: @1v !important;
+      overflow: hidden; // crop sub-corners
+
+      .completion {
+        border-bottom: @border-thick-action-blue;
+        background: @background-contrast-grey;
+        color: @text-default-grey;
+      }
+      .btn {
+        background-color: @background-action-high-blue-france !important;
+        color: @text-inverted-blue-france !important;
+        border-radius: @0v !important;
+        padding: @1-5v !important;
+        &:hover { background-color: @background-action-high-blue-france-hover !important; }
+        &:active { background-color: @background-action-high-blue-france-active !important; }
+      }
+    }
+  }
+
+  .btn-shortcut {
+    &:hover { background-color: @background-default-grey-hover; }
+    &:active { background-color: @background-default-grey-active; }
+  }
+}
+
+.search-bar {
+  background: transparent !important;
+
+  .btn.btn-secondary, .btn.btn-icon.clear.visible {
+    background: @background-action-high-blue-france;
+    color: @text-inverted-blue-france;
+    line-height: 1.45;
+    border-radius: @0v !important;
+
+    i { opacity: 1; }
+    &:hover {
+      background-color: @background-action-high-blue-france-hover !important;
+      & > i::before { color: @text-inverted-blue-france; }
+    }
+    &:active { background-color: @background-action-high-blue-france-active !important; }
+  }
+
+  &:not(:has(input.collapsed)) { // unsure 'bout this ...
+    .btn.btn-secondary:is(:first-child) {
+      border-top-left-radius: @1v !important;
+    }
+  }
+
+  .btn.btn-secondary:is(:first-child) {
+    border: none;
+    // border-top-left-radius: @1v !important;
+    i { opacity: 1; }
+  }
+
+  .btn.btn-icon.clear.visible { // oof specifics
+    border-top-right-radius: @1v !important;
+  }
+
+  input.form-control {
+    border: none !important;
+    border-bottom: @border-thick-action-blue !important;
+    background: @background-contrast-grey;
+    color: @text-default-grey;
+    border-top-right-radius: @1v !important;
+  }
+
+  &.focus {
+    input.form-control {
+      border-top-right-radius: @0v !important;
+    }
+  }
+  &.collapsible {
+    &.focus {
+      .btn.btn-secondary:is(:first-child) {
+        border-top-left-radius: @1v !important; // this not specific enough ?
+      }
+    }
+    .btn-secondary {
+      border-color: @background-action-high-blue-france !important;
+    }
+  }
+
+  // global search specificities
+  #btn_indexsearch, #btn_indexscan, #btndom1, #btndom2 {
+    &:hover {
+      background: @background-default-grey-hover !important;
+      color: @text-action-high-blue-france;
+    }
+    &:active {
+      background: @background-default-grey-active !important;
+      color: @text-action-high-blue-france;
+    }
+  }
+  div:has(#inpdom) {
+    margin-right: @4v;
+  }
+}
+
+.list-search-index {
+  border: none !important;
+
+  input.form-control {
+    border: none !important;
+    border-bottom: @border-thick-action-blue !important;
+    background: @background-contrast-grey;
+    color: @text-default-grey;
+    border-top-left-radius: @1v !important;
+  }
+
+  button.btn {
+    background: @background-action-high-blue-france !important;
+    color: @text-inverted-blue-france !important;
+    padding: .35rem;
+
+    &:hover { background-color: @background-action-high-blue-france-hover !important; }
+    &:active { background-color: @background-action-high-blue-france-active !important; }
+
+    &:is(:last-child) {
+      border-top-right-radius: @1v !important;
+    }
+  }
+}
+
+#indexSearch_3 { // index-search bar with regular ".btn-secondary" (not embedded)
+  .search-bar .btn.btn-secondary {
+    &:hover {
+      background: @background-default-grey-hover !important;
+      color: @text-action-high-blue-france;
+    }
+    &:active {
+      background: @background-default-grey-active !important;
+      color: @text-action-high-blue-france;
+    }
+  }
+}
+
+tr.search { // filter search in lists
+  .input-group.searchby {
+    input.search-control:not(.form-check-input), input.form-control:not(.form-check-input) {
+      border-bottom: @border-thick-action-blue;
+      background: @background-contrast-grey;
+      color: @text-default-grey;
+      border-top-left-radius: @1v;
+
+      &:is(:last-child) {
+        border-top-right-radius: @1v;
+      }
+
+      .form-control {
+        background-color: @background-contrast-grey;
+      }
+    }
+    .input-group-text {
+      margin-left: @0v;
+      background-color: @background-action-high-blue-france;
+      color: @text-inverted-blue-france;
+      padding: @1v;
+      border-radius: @0v !important;
+
+      &:last-child {
+        border-top-right-radius: @1v !important;
+      }
+
+      i { opacity: 1; }
+      &:hover {
+        background-color: @background-action-high-blue-france-hover !important;
+        cursor: pointer;
+      }
+      &:active { background-color: @background-action-high-blue-france-active !important; }
+    }
+  }
+}
+
+
+/* Boutons */
+button.btn:not(.disabled), a.btn:not(.disabled) {
+  border-radius: @0v !important;
+
+  &.btn-primary {
+    background: @background-action-high-blue-france;
+    color: @text-inverted-blue-france;
+    border: none;
+    &:hover {
+      background: @background-action-high-blue-france-hover;
+      color: @text-inverted-blue-france;
+    }
+    &:active, &.active {
+      background: @background-action-high-blue-france-hover;
+      color: @text-inverted-blue-france;
+    }
+  }
+
+  &.btn-secondary, &.btn-extend {
+    background: @background-default-grey;
+    color: @text-action-high-blue-france;
+    border: @border-action-blue;
+    &:hover {
+      background: @background-default-grey-hover;
+      color: @text-action-high-blue-france;
+    }
+    &:active, &.active {
+      background: @background-default-grey-active;
+      color: @text-action-high-blue-france;
+    }
+  }
+
+  &.btn-action { // yet "custom" but might move to "tertiary" ...
+    background: var(--yellow-moutarde-200);
+    color: @text-action-high-grey;
+    border: @border-action-grey;
+    &:hover {
+      background:var(--yellow-moutarde-200-h);
+      color: @text-action-high-grey;
+    }
+    &:active, &.active {
+      background:var(--yellow-moutarde-200-a);
+      color: @text-action-high-grey;
+    }
+  }
+
+  &.btn-icon, &.btn-plus { // tertiary no border with icon
+    background: @background-default-grey; // rather transparent -> for when not on white ?
+    color: @text-action-high-blue-france;
+    border: none;
+    &:hover {
+      background: @background-default-grey-hover;
+      color: @text-action-high-blue-france;
+    }
+    &:active, &.active {
+      background: @background-default-grey-active;
+      color: @text-action-high-blue-france;
+    }
+  }
+
+  &.btn-define { // tertiary bordered with icon
+    background: @background-default-grey;
+    color: @text-action-high-blue-france;
+    border: @border-default-grey; // @border-default-grey (to create ?)
+    &:hover {
+      background: @background-default-grey-hover;
+      color: @text-action-high-blue-france;
+    }
+    &:active, &.active {
+      background: @background-default-grey-active;
+      color: @text-action-high-blue-france;
+    }
+  }
+
+  &:focus { // same for all
+    outline: @border-focus;
+    outline-offset: @0-5v;
+  }
+}
+
+button.btn.disabled {
+  pointer-events: none;
+
+  &.btn-primary {
+    background: @background-disabled-grey;
+    color: @text-disabled-grey;
+  }
+  &.btn-secondary {
+    color: @text-disabled-grey;
+    border-color: @text-disabled-grey;
+  }
+}
+
+.btn-group > .btn:first-of-type {
+  border-top-left-radius: @0v !important;
+  border-bottom-left-radius: @0v !important;
+}
+.btn-group > .btn.btn-primary:last-of-type {
+  border-top-right-radius: @0v !important;
+  border-bottom-right-radius: @0v !important;
+}
+
+.btn-close:hover {
+  background-color: @background-contrast-grey;
+}
+
+.btn-color-picker .preview {
+  border-radius: @4v !important;
+}
+
+.btn-ace-fullscreen.open::before {
+  color: @text-default-grey;
+}
+
+/* Bouton radio */
+.field-boolean, .field-enum {
+  .form-control {
+    border: none !important;
+  }
+
+  .form-check {
+    input.form-check-input {
+      border-radius: 50% !important;
+      border: @border-action-blue !important;
+      width: @4-5v !important;
+      height: @4-5v !important;
+
+      &:focus {
+        outline: @border-focus;
+        outline-offset: @0-5v;
+      }
+    }
+    label.form-check-label {
+      padding-top: @0-5v; // @1-25v ??
+      padding-left: @1-25v;
+    }
+
+    &.form-check-checked {
+      input.form-check-input {
+        background-color: transparent !important;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='2' fill='%238585f6'/%3E%3C/svg%3E") !important;
+      }
+    }
+  }
+}
+
+/* Case à cocher */
+.field-enummulti {
+  .form-control {
+    border: none !important;
+  }
+
+  .form-check {
+    input.form-check-input {
+      border-radius: @1v !important;
+      width: @4-5v !important;
+      height: @4-5v !important;
+      border: @border-action-blue !important;
+
+      &:checked {
+        background-color: @background-action-high-blue-france !important;
+        border-color: @background-action-high-blue-france !important;
+      }
+      &:focus {
+        outline: @border-focus;
+        outline-offset: @0-5v;
+      }
+    }
+    label.form-check-label {
+      padding-top:  @0-5v;// @1-25v ??
+      padding-left: @1-25v;
+    }
+  }
+}
+
+input[type="checkbox"], input.selrow {
+  // overriding bootstrap's style by sneaking a ::before on top of it when checked...
+  position: relative;
+  width: @5v;
+  height: @5v;
+  margin-right: @1v;
+  border-color: @background-action-high-blue-france !important;
+  &::before {
+    content:'';
+    position: absolute;
+    top: @0v;
+    left: @0v;
+    width: 100%;
+    height: 100%;
+    border-radius: @0-5v;
+    background-color: @background-action-high-blue-france;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='7.2 12 10.8 15.6 16.8 8.4'/%3E%3C/svg%3E");
+    opacity: 0;
+  }
+  &:checked {
+    &::before {
+      opacity: 1;
+    }
+  }
+  &:focus {
+    outline: @border-focus;
+    outline-offset: @0-5v;
+    border-radius: @1v !important;
+  }
+}
+
+/* Champ de saisie */
+.field, .field-string, .field-email, .field-regexp, .row, .fields-row {
+  label {
+    font-weight: 400;
+    color: @text-label-grey;
+  }
+  input.form-control:not([type="file"]), textarea.form-control, select.form-control {
+    border: none;
+    border-bottom: @border-thick-text-grey !important;
+    background: @background-contrast-grey;
+    color: @text-default-grey;
+    border-top-left-radius: @1v !important;
+
+    &:last-child {
+      border-top-right-radius: @1v !important;
+    }
+    &:focus {
+      outline: @border-focus;
+      outline-offset: @0-5v;
+    }
+  }
+  .input-group-text {
+    background: @background-contrast-grey;
+    border: none;
+    border-bottom: @border-thick-text-grey;
+    color: @text-label-grey;
+    i { opacity: 1 !important; }
+    &:last-child {
+      border-radius: @0v !important;
+      border-top-right-radius: @1v !important;
+    }
+    &:not(.render) {
+      &:hover { background: @background-contrast-grey-hover; }
+      &:active { background: @background-contrast-grey-active; }
+    }
+  }
+
+  .field-boolean .field-container, .field-enummulti, .field-enum {
+    &:not(:has(select.form-control)) {
+      .form-control:not(input[type="file"]), .input-group-text, .form-checkbox {
+        border-bottom: @border-thick-grey !important;
+      }
+    }
+    select.form-control {
+      border-bottom-color: @text-default-grey !important;
+    }
+  }
+
+  .progress {
+    margin-top: @1-5v !important;
+  }
+
+  // Addons
+  .field-container > .input-group {
+    button.btn {
+      border: none;
+      border-radius: @0v !important;
+      background: @background-contrast-grey;
+      color: @text-default-grey;
+      border-bottom: @border-thick-text-grey;
+
+      &.dropdown-toggle, i {
+        opacity: 1 !important;
+      }
+      &:is(:last-child) {
+        border-top-right-radius: @1v !important;
+      }
+      &:hover { background: @background-contrast-grey-hover; }
+      &:active { background: @background-contrast-grey-active; }
+    }
+  }
+}
+
+.field-longstring { // specific long-text field renderings...
+  .markdown-html {
+    background: @background-alt-grey;
+    border: none;
+    border-bottom: @border-thick-action-grey;
+    border-top-left-radius: @1v;
+  }
+  .grid-json input.cell {
+    background: @background-alt-grey;
+
+    &:hover {
+      background: @background-alt-grey-hover;
+    }
+    &:focus, &.active {
+      background: @background-alt-grey-active;
+    }
+  }
+
+  .ace_editor_embedded {
+    border: none;
+  }
+  .ace_scroller, .ace_gutter {
+    border-bottom: @border-thick-action-grey;
+  }
+}
+
+.ace_content {
+  background: #011e3a; // ace-theme specific
+}
+
+/* Editeurs de textes */
+.tox { // within ".field-html" only ?
+  border: @border-action-grey !important;
+  .tox-editor-header {
+    border-bottom: @border-action-grey !important;
+    background: @background-alt-grey !important;
+    .tox-menubar, .tox-toolbar__primary, .tox-toolbar-overlord {
+      background: inherit !important;
+
+      .tox-mbtn, .tox-tbtn {
+        color: @text-default-grey !important;
+      }
+
+      svg { fill: @text-default-grey !important; }
+      .tox-tbtn--disabled svg { fill: @text-disabled-grey !important; }
+
+      .tox-mbtn:hover:not(:disabled):not(.tox-mbtn--active), .tox-tbtn:hover {
+        background: @background-action-low-blue-france !important;
+      }
+    }
+  }
+
+  .tox-edit-area__iframe {
+    background: @background-default-grey !important;
+  }
+}
+
+/* Ajout de fichier */
+.field-document, .field-image {
+  input {
+    border: none !important;
+    border-bottom: none !important;
+    background: transparent !important;
+  }
+  input[type="file"]::file-selector-button {
+    color: @text-action-high-grey;
+    background: @background-contrast-grey !important;
+    border-left: none !important;
+    border: none !important;
+    border-radius: @1v;
+    padding: @2v;
+  }
+
+  & .input-group:has(input[type="file"]) {
+    button.btn {
+      border-bottom-color: transparent !important;
+    }
+  }
+
+  .doc-multi i.fa-plus::before {
+    color: @background-default-grey;
+  }
+}
+
+/* Curseur  */
+.field-int {
+  input[type="range"] {
+    --webkit-appearance: auto !important;
+    --moz-appearance: auto !important;
+
+    &:focus { // focus only thumb, not body
+      outline: none !important;
+    }
+  }
+}
+
+/* Liste déroulant */
+.field-enummulti, .field-enum {
+  span.select2 {
+    border-bottom: @border-thick-text-grey;
+  }
+  span.select2-selection {
+    border: none !important;
+    background: @background-contrast-grey;
+    border-top-left-radius: @1v !important;
+    border-top-right-radius: @1v !important;
+  }
+
+  .select2-container--focus .select2-selection {
+    outline-color: @background-action-high-blue-france !important;
+    outline-offset: @0-5v;
+    box-shadow: none !important;
+  }
+}
+
+/* Infobulle  */
+.tooltip {
+  box-shadow: @detached !important;
+  color: @background-default-grey !important;
+  background: @background-default-grey !important;
+
+	.tooltip-inner {
+		color: @text-default-grey;
+		background-color: @background-default-grey;
+	}
+	.subtitle {
+		display: block;
+		color: @text-mention-grey;
+	}
+}
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+  border-top-color: @background-default-grey !important;
+}
+.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
+  border-bottom-color: @background-default-grey !important;
+}
+.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
+  border-right-color: @background-default-grey !important;
+}
+.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
+  border-left-color: @background-default-grey !important;
+}
+
+.popover {
+	color: @text-default-grey;
+	background: none;
+	border: none;
+	border-radius: @0v;
+  box-shadow: @detached !important;
+
+  .popover-arrow {
+    color: @background-default-grey;
+    border: none !important;
+  }
+
+	.popover-header {
+		background: @background-default-grey;
+		color: @text-default-grey;
+		border: none;
+		border-bottom: none;
+    font-weight: 600;
+    margin-bottom: @0v !important;
+	}
+	.popover-body {
+		background: @background-default-grey;
+		color: @text-default-grey;
+		border: none;
+    margin-top: @0v !important;
+	}
+}
+
+/* Interrupteur  */
+.field .field-boolean .field-container:has(.form-slide), .row .field-container:has(.btn-switch) {
+  border-bottom: @border-thick-grey !important;
+  padding-bottom: @1v;
+}
+
+label.btn-switch {
+  height: @6v;
+  width: @10v;
+
+  .slider { background-color: @background-default-grey; }
+
+  .slider.round {
+    border-radius: 0.75rem !important;
+    border-color: @background-action-high-blue-france;
+
+    &::before {
+      width: @6v;
+      height: @6v;
+      background: @background-default-grey;
+      border-color: @background-action-high-blue-france;
+      border-width: 0.0625rem;
+      left: -0.063rem; bottom: -0.063rem;
+    }
+  }
+
+  input:checked + .slider.round {
+    background-color: @background-action-high-blue-france;
+    border-color: @background-action-high-blue-france;
+
+    &::before {
+      transform: translateX(@4v);
+      border-color: @background-action-high-blue-france;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238585f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='7.2 12 10.8 15.6 16.8 8.4'/%3E%3C/svg%3E");
+    }
+  }
+}
+
+.slider > input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: @background-default-grey; // shall fille BEFORE the thumb with BLUE
+  height: @3v !important; // no matter the context
+  border-radius: @1-5v !important;
+  border: @border-action-blue !important;
+  
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: @5v;
+    height: @5v;
+    box-shadow: @raised !important;
+    background-color: @background-default-grey !important;
+    border-width: @0-25v !important;
+    border-color: @background-action-high-blue-france !important;
+    border-radius: @2-5v !important;
+  }
+  &::-moz-range-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: @5v;
+    height: @5v;
+    background-color: @background-default-grey;
+    border-width: @0-25v;
+    border-color: @background-action-high-blue-france;
+    border-radius: @2-5v !important;
+  }
+}
+
+/* Champs en état d'erreur */
+.form-group:has(.alert), .form-group.has-error {
+  .alert { // keeping text only (mandatory)
+    &::before { content: none; }
+    padding-left: @0v !important;
+    color: @background-flat-error !important;
+  } 
+  box-shadow: @n0-5v @0v @0v @0v @background-flat-error !important;
+  border-left: solid @2v @background-default-grey; // shall ensure it's always on white bg ...
+
+  // Champ de saisie en erreur
+  input.form-control, textarea.form-control, select.form-control {
+    border-bottom-color: @background-flat-error !important;
+  }
+  label {
+    color: @text-default-error !important;
+  }
+  // Champ booléen/enum en erreur
+  &.field-boolean, &.field-enum:has(input.form-check-input), &.field-enummulti {
+    input.form-check-input {
+      border-color: @background-flat-error !important;
+    }
+  }
+  &.field-enummulti, &.field-enum:has(span.select2) {
+    span.select2 {
+      border-bottom-color: @background-flat-error !important;
+    }
+  }
+}
+
+/* Fil d'arianne */
+.breadcrumb {
+  .breadcrumb-item {
+    &::before {
+      color: @text-mention-grey !important;
+      font-weight: 600 !important;
+      padding: @0v @2v !important;
+    }
+    a {
+      color: @text-mention-grey;
+      text-decoration: underline;
+      transition: font-weight 0.25s;
+    }
+    &:last-child {
+      a {
+        font-weight: normal;
+        color: @text-active-grey;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* Indicateur d'étape */
+// half-reworked -> colors only (visuals would need an upgrade
+.states-navbar {
+  .nav {
+    ol.navbar-metro-line.text-top { // ligne de métro
+      li { // default - not visited
+        div::before, &::after { background-color: @background-disabled-grey; }
+
+        &.visited {
+          div::before, &::after { background-color: @background-action-high-blue-france; }
+        }
+        &.current {
+          div::before {
+            background-color: var(--blue-france-625);
+            box-shadow: @0v @0v @4v var(--blue-france-625);
+          }
+        }
+      }
+    }
+
+    ol.navbar-metro-line.text-center { // fil d'arianne (boxes)
+      li { 
+        div, &::after { background-color: @background-disabled-grey; }
+
+        &.visited {
+          div, &::after { background-color: @background-action-high-blue-france; }
+        }
+        &.current {
+          div {
+            background-color: var(--blue-france-625);
+            box-shadow: @0v @0v @4v var(--blue-france-625) !important;
+          }
+        }
+      }
+    }
+
+    ol.navbar-breadcrumb {
+      li {
+        div {
+          background-color: @background-disabled-grey;
+          color: @text-default-grey;
+          &::after {
+            border-left-color: @background-disabled-grey;
+          }
+        }
+        &::after {
+          background-color: @background-disabled-grey;
+        }
+
+        &.visited {
+          div {
+            background-color: @background-action-high-blue-france;
+            color: @text-inverted-blue-france;
+            &::after {
+              border-left-color: @background-action-high-blue-france;
+            }
+          }
+        }
+        &:has(+ li.visited)::after {
+            background-color: @background-action-high-blue-france;
+        }
+        &:has(+ li.current)::after {
+           background-color: var(--blue-france-625);
+        }
+        &.current {
+          div {
+            background-color: var(--blue-france-625);
+            color: @text-inverted-blue-france;
+            &::after {
+              border-left-color: var(--blue-france-625);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Menu latéral */
+#menu {
+  border-right: @border-thick-grey;
+  padding-right: @1v;
+  padding-top: @2v;
+  color: @text-label-grey;
+
+  nav.main-nav {
+    ul.main-menu {
+      padding-left: @1v;
+
+      li {
+        a {
+          font-weight: bold;
+          &:focus {
+            outline: none !important;
+          }
+        }
+
+        &:hover > a { background: @background-default-grey-hover; }
+
+        &.active { // disabling this when #menu .main-nav .searchbar .input-group:has(.visible)
+          & > a {
+            color: @text-action-high-blue-france;
+            background: @background-action-low-blue-france;
+
+            &::before {
+              content:'';
+              position: absolute;
+              height: 66%;
+              width:  @0-5v;
+              top: @1-5v;
+              left: @0v;
+              background: @background-action-high-blue-france;
+            }
+          }
+        }
+
+        a {
+          background: transparent;
+
+          &::before {
+            height: 66%;
+            width:  @0-5v;
+            top: @1-5v;
+            background: @background-action-high-blue-france;
+          }
+
+          &.menu-sel {
+            color: @text-action-high-blue-france;
+          }
+        }
+        ul.sub-menu > li {
+          a {
+            font-weight: normal;
+            padding-left: @5v;
+          }
+
+          & > ul.sub-menu > li > a {
+            font-weight: normal;
+            padding-left: @9v;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Modale */
+.modal-dialog {
+  .modal-content {
+    background-color: @background-default-grey;
+
+    .modal-header, .modal-footer {
+      background-color: @background-default-grey;
+    }
+
+    .modal-header {
+      position: relative;
+      border-bottom: none !important;
+      padding-left: @11v;
+      h3 { 
+        color: @text-title-grey;
+        font-weight: bold;
+        margin-bottom: @4v;
+      }
+
+      &:has(h3) {
+        .icon-title { display: none; }
+        &::before {
+          content: '';
+          position: absolute;
+          width: @6v;
+          height: 100%;
+          top: 20%; // @4v;
+          left: @3v;
+          background-image: url("data:image/svg+xml,%3Csvg width='22' height='21' viewBox='0 0 22 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.2293 9.03733L9.07733 1.88533L10.9627 0L21.3333 10.3707L10.9627 20.7413L9.07733 18.856L16.2293 11.704H0V9.03733H16.2293Z' fill='%23161616'/%3E%3C/svg%3E");
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+      }
+    }
+
+    .modal-footer {
+      border-top: none !important;
+      
+      .btn-YES, .btn-NO { // move ahead to apply more global styles ??
+        background: @background-action-high-blue-france;
+        color: @text-inverted-blue-france;
+        border: none;
+        &:hover {
+          background:var(--blue-france-sun-113-h);
+          color: @text-inverted-blue-france;
+        }
+        &:active, &.active {
+          background:var(--blue-france-sun-113-a);
+          color: @text-inverted-blue-france;
+        }
+      }
+    }
+  }
+}
+
+/* Onglet */
+.tabs { // all orientations
+  ul.nav-tabs {
+    border-bottom-color: @border-color-grey;
+    li.nav-item:not(:has(.active)) {
+      a.nav-link {
+        color: @text-action-high-grey;
+        background: @background-action-low-blue-france;
+        border: none;
+
+        &:hover {
+          border: none;
+          background-color: @background-action-low-blue-france-hover;
+        }
+        &:active {
+          border: none;
+          background-color: @background-action-low-blue-france-active;
+        }
+      }
+    }
+  }
+
+  .tab-content {
+    background-color: @background-default-grey;
+    border-color: @border-color-grey;
+  }
+}
+
+.tabs-top {
+  li.nav-item:has(.active) {
+    a.nav-link.active {
+      border-color: @border-color-grey;
+      background: @background-default-grey;
+      border-top: @border-thick-action-blue;
+      border-bottom: none !important;
+      color: @text-action-high-blue-france;
+    }
+  }
+}
+.tabs-left {
+  li.nav-item {
+    margin-bottom: @1v;
+  }
+
+  li.nav-item:has(.active) {
+    a.nav-link.active {
+      border-color: @border-color-grey;
+      background: @background-default-grey;
+      border-left: @border-thick-action-blue;
+      border-right: none !important;
+      color: @text-action-high-blue-france;
+    }
+  }
+}
+
+/* Pagination */
+ul.pagination {
+  gap: @4v;
+
+  li.page-item:not(.active) > a.page-link {
+    border: none !important;
+    color: @text-action-high-grey;
+    font-weight: 500;
+
+    &:hover {
+      color: @text-action-high-grey;
+      background: @background-alt-grey-hover;
+    }
+  }
+
+  li.page-item.disabled > a.page-link {
+    background-color: transparent !important;
+  }
+
+  li.page-item.active {
+    color: @text-inverted-grey;
+    a.page-link {
+      background: @background-action-high-blue-france !important;
+      border-color: transparent !important;
+    }
+  }
+}
+
+/* Tableau */
+table.table {
+  background: @background-default-grey;
+  border-color: @text-disabled-grey;
+  thead {
+    tr.col-area, tr.head, tr.search {
+
+      th {
+        background-color: @background-alt-grey;
+        color: @text-default-grey;
+
+        &.col-action {
+          border-right: @border-text-grey;
+        }
+
+        a { border-bottom: none; }
+      }
+    }
+
+    tr.search {
+      th {
+        padding: @2v;
+        border-bottom: @border-text-grey;
+
+        select.form-control {
+          border: none;
+          border-bottom: @border-thick-text-grey;
+          background: @background-contrast-grey;
+          color: @text-default-grey;
+          border-top-left-radius: @1v !important;
+
+          &:last-child {
+            border-top-right-radius: @1v !important;
+          }
+          &:focus {
+            outline: @border-focus;
+            outline-offset: @0-5v;
+          }
+        }
+      }
+    }
+
+    &:has(tr.search[style*="display: none"]) {
+      tr.head th {
+        border-bottom: @border-text-grey;
+      }
+    }
+
+    div.actions { // specificities ...
+      .dropdown {
+        button.btn-selrows {
+          &:hover { background: @background-contrast-grey-hover !important; }
+          &:active { background: @background-contrast-grey-active !important; }
+        }
+        // cannot infer as it's <img> dynamically modified ...
+      }
+      button.btn-pincol {
+        min-width: 2rem;
+        padding: .5rem;
+        background: transparent !important;
+
+        i::before { font-weight: bold !important; }
+        &:hover { background: @background-contrast-grey-hover !important; }
+        &:active { background: @background-contrast-grey-active !important; }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        background: @background-default-grey;
+        &:not([style*="background"]) {
+          color: @text-default-grey;
+        }
+        border-bottom: @border-disabled-grey;
+
+        &.col-action {
+          border-right: @border-text-grey;
+
+          button.btn {
+            background: transparent !important;
+          }
+        }
+      }
+
+      &:nth-of-type(odd) td {
+        background: @background-default-grey;
+      }
+
+      &:hover td {
+        background: @background-contrast-grey !important;
+        color: @text-default-grey !important;
+      }
+
+      &:focus { outline: none !important; }
+    }
+
+    tr.selected {
+      border: @border-thick-action-blue !important;
+      td { background-color: @background-default-grey; }
+    }
+  }
+}
+
+.table > tbody > tr.selected:nth-of-type(odd) > td {
+  background-color: @background-default-grey;
+}
+
+/* Tuile */
+.list-shortcuts button.item {
+  padding: @3v;
+  padding-bottom: @12v;
+  border: @border-default-grey;
+  border-bottom: solid @1v @background-action-high-blue-france;
+  background: @background-default-grey;
+  
+  img.icon {
+    min-height: @14v;
+    height: @14v;
+    font-size: @14v;
+  }
+  div.label {
+    color: @text-action-high-blue-france;
+    font-size: 14px;
+  }
+  &::after {
+    content:'';
+    position: absolute;
+    bottom: @4v;
+    right: @3v;
+    width: @3-5v;
+    height: @3-5v;
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='21' viewBox='0 0 22 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.2293 9.03733L9.07733 1.88533L10.9627 0L21.3333 10.3707L10.9627 20.7413L9.07733 18.856L16.2293 11.704H0V9.03733H16.2293Z' fill='%238585f6'/%3E%3C/svg%3E");
+    background-size: 100%;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+  }
+
+  &:hover {
+    background: @background-default-grey-hover;
+  }
+}
+
+.floating-bar {
+  background: @background-default-grey;
+  border: @border-default-grey;
+  box-shadow: @overlap !important;
+}
+
+/* 
+  --- DARK SPECIFIC FIXES ---
+*/
+// fixing default texts into right colors
+// >> Not infering with the existing hierarchies
+// >> Doing case by case ...
+.card-header {
+  h4, .obj-title span, &.collapsed span, &.collapsed::after, & > span {
+    color: @text-default-grey;
+  }
+}
+.form-navbar span, .card-footer span, .header select.form-control, .states-navbar span {
+  color: @text-default-grey;
+}
+
+.zoom-compact::before {
+  color: @text-default-grey !important;
+}
+
+th > a {
+  i, span {
+    color: @text-default-grey;
+  }
+}
+
+td:not([style*="background"], [style*="background-color"]) {
+  div, span {
+    color: @text-default-grey;
+  }
+}
+
+// icon images going from #000091 to #8585F6 (approx) --> specific to DSFR icons !
+.main-menu, .obj-title, .apps>.thumbnail, .shortcuts .label, .scope-icon, .card-header[data-bs-toggle*="collapse"]{
+  img {
+    filter: brightness(0) saturate(100%) invert(52%) sepia(75%) saturate(1200%) hue-rotate(206deg) brightness(102%) contrast(101%);
+  }
+}
+
+.main-menu li.status {
+  img {
+    filter: none !important;
+  }
+}
