@@ -7,8 +7,8 @@
   "mdl_version": "1.14.2",
   "mdl_type": "C",
   "mdl_icon": null,
-  "mdl_url": "{\n\t\"origin\": {\n\t\t\"uri\": \"https://github.com/simplicitesoftware/module-themeetat.git\"\n\t},\n\t\"type\": \"git\",\n\t\"branch\": \"dsfr-v6\"\n}",
-  "mdl_comment": null
+  "mdl_url": "{\n    \"origin\": {\"uri\": \"https://github.com/simplicitesoftware/module-themeetat.git\"},\n    \"type\": \"git\",\n    \"branch\": \"dsfr-v6\"\n}",
+  "mdl_comment": "## Introduction\n\nAlthought this **ThemesDSFR** module is hosted on the `module-themeetat` repository, it differs from it for several reasons, and isn't meant to work in combination with it. We recommend to select either one of the 2 modules instead of having both of them.\n\nIndeed this module was created based on the [DSFR v1.14.2](https://www.systeme-de-design.gouv.fr/version-courante/fr/a-propos/notes-de-versions/note-de-version-114), and aims to reproduce/integrate its visual styles & rules specifically for Simplicité's interfaces. \n\n## Content\n\nThis module contains all the necessary assets to fully use our integration of the DSFR styles :\n\n- ThemeDSFR-light\n\t- Light version of the DSFR looks & visuals, including the components that are still *bêta* in the v1.14.2\n- ThemeDSFR-dark\n\t- Dark version of the DSFR looks & visuals, including the components that are still *bêta* in the v1.14.2\n- Marianne Font\n\t- Official font referenced in the DSFR documentation, available [here](https://www.systeme-de-design.gouv.fr/version-courante/fr/fondamentaux/typographie)\n- DSFR icons\n\t- Official icon-set detailed [here](https://www.figma.com/design/v1BW45yI2kK5DnQtWPit5a/DSFR---Fondamentaux---v1.14--Community-?node-id=1-141) in the DSFR's figma\n- DSFR pictograms\n\t- Official set of pictograms detailed [here](https://www.figma.com/design/Kwibp2WR8vgK10SWluTP7w/DSFR---Pictogrammes---V1.14--Community-?node-id=1-2&p=f&t=wrBxdY6GHBkUrdOf-0) in the DSFR's figma\n\n## Warning note\n\nEven thought we tried to accurately reproduce & integrate the DSFR's rules & component styles, we faced several complications that are important to acknowledge :\n\n- DSFR being website-oriented, and Simplicité being a web-platform, there was a mismatch in the type of interface adressed by each.\n\t- Thus the components couldn't be automatically matched from one environment to another\n\t- Some of the components from one environment have no equivalent in the other.\n- Simplicité being a Low-Code platform that allows users to create their own unique interfaces, we couldn't restrict the components' usage to precise contexts.\n\t- Thus the components' styles were given with a more \"global\" approach, in order to apply as few restrictions/inconsistencies as possible in the end-users interfaces.\n- Simplicité having its own custom components, those were redesigned to match the DSFR's color palette & other components style.\n - But those aren't as accurate as they would have be if included in the DSFR as they're used in Simplicité\n\nIf you're interested in the explanations behind some of our choices, or why some elements of the DSFR aren't as they could have been within proper DSFR-implemented interfaces, you can refer to the [detailed documentation]() that is in the **DSFR_README.md** file in this repository."
  },
  "links": [
   {
@@ -143,6 +143,30 @@
    "icon": "img/system/resource",
    "field": "row_module_id",
    "list": [
+    {
+     "object": "Resource",
+     "userkey": "Disposition(default)~ANY~Marianne",
+     "item": {
+      "res_object": {
+       "object": "Disposition",
+       "label": "Disposition",
+       "userkeylabel": "default",
+       "icon": "img/system/disposition",
+       "item": {"dis_code": "default"}
+      },
+      "res_type": "FONT",
+      "res_lang": "ANY",
+      "res_code": "Marianne",
+      "res_cached": false,
+      "res_file": {
+       "path": "resources/Disposition/default/Marianne.zip",
+       "mime": "application/zip",
+       "name": "Marianne.zip"
+      },
+      "res_image": null,
+      "row_module_id__mdl_name": "ThemesDSFR"
+     }
+    },
     {
      "object": "Resource",
      "userkey": "Disposition(default)~ANY~ICONS_DSFR",
