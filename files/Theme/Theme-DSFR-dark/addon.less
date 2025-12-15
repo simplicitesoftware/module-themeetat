@@ -815,6 +815,12 @@ header.header, footer.footer, #menu, main#work {
   }
 }
 
+.floating-bar {
+  background: @background-default-grey;
+  border: @border-default-grey;
+  box-shadow: @overlap !important;
+}
+
 // --- Detailled styling (dsfr components mapped to simplicité's usages)
 
 /* Lien */
@@ -2320,10 +2326,70 @@ table.table {
   }
 }
 
-.floating-bar {
+/* Cartes */
+.obj-summary {
   background: @background-default-grey;
-  border: @border-default-grey;
-  box-shadow: @overlap !important;
+  box-shadow: @raised !important;
+  .title {
+    background: @background-default-grey;
+    color: @text-action-high-blue-france;
+    border-bottom: none;
+    padding-bottom: @0v;
+    .title-group .obj-title-group .obj-title {
+      font-weight: 600;
+    }
+  }
+  .obj-actions {
+    background: @background-default-grey;
+    border-top: none;
+    .actions {
+      padding: @0v;
+      button {
+        margin-left: @0v;
+        margin-right: @0v;
+        &:hover {
+          background: @background-contrast-grey;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    background: @background-default-grey-hover;
+    .title, .infos, .obj-actions, .obj-actions>.actions>button, .title>.title-plus>.actions>.dropdown>button.btn {
+      background: @background-default-grey-hover;
+    }
+  }
+}
+
+/* Process specificities (simplicité) */
+.activity {
+  .act-road {
+    .act-road-item::before {
+      border-radius: @0v !important;
+      background: @text-action-high-grey;
+    }
+    li:last-child .act-road-item::before {
+      background-color: @background-action-high-blue-france !important;
+    }
+  }
+  .act-content .activity-body {
+    table {
+      tr.search > th:first-of-type, tr > td:first-of-type {
+        border-right: @border-action-grey !important;
+      }
+      td > input.selrow[type="radio"] {
+        appearance: none;
+        border: @border-action-grey;
+        border-radius: @1v !important;
+      }
+    }
+
+    &:has(.card-body) {
+      border-left: @border-default-grey;
+      border-right: @border-default-grey;
+    }
+  }
 }
 
 /* 
