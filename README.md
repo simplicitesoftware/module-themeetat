@@ -44,5 +44,5 @@ Even thought we tried to accurately reproduce & integrate the DSFR's rules & com
 - Simplicité having its own custom components, those were redesigned to match the DSFR's color palette & other components style.
  - But those aren't as accurate as they would have be if included in the DSFR as they're used in Simplicité
 
-If you're interested in the explanations behind some of our choices, or why some elements of the DSFR aren't as they could have been within proper DSFR-implemented interfaces, you can refer to the [detailed documentation]() that is in the **DSFR_README.md** file in this repository.
+If you're interested in the explanations behind some of our choices, or why some elements of the DSFR aren't as they could have been within proper DSFR-implemented interfaces, you can refer to the [detailed documentation](https://github.com/simplicitesoftware/module-themeetat/blob/dsfr-v6/DSFR-README.md) that is in the **DSFR_README.md** file in this repository.
 
