@@ -193,7 +193,7 @@
     },
     {
      "object": "Resource",
-     "userkey": "Disposition(default)~ANY~ICONS_DSFR-PICTOS",
+     "userkey": "Disposition(default)~ANY~ICONS_DSFR_PICTOS",
      "item": {
       "res_object": {
        "object": "Disposition",
@@ -204,10 +204,10 @@
       },
       "res_type": "SET",
       "res_lang": "ANY",
-      "res_code": "ICONS_DSFR-PICTOS",
+      "res_code": "ICONS_DSFR_PICTOS",
       "res_cached": false,
       "res_file": {
-       "path": "resources/Disposition/default/ICONS_DSFR-PICTOS.zip",
+       "path": "resources/Disposition/default/ICONS_DSFR_PICTOS.zip",
        "mime": "application/zip",
        "name": "icons.zip"
       },

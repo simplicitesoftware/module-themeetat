@@ -802,6 +802,11 @@ header.header, footer.footer, #menu, main#work {
   box-shadow: @overlap !important;
 }
 
+thead.sticky-head {
+  border: @border-default-grey;
+  box-shadow: @overlap !important;
+}
+
 // --- Detailled styling (dsfr components mapped to simplicité's usages)
 
 /* Lien */
@@ -2157,8 +2162,9 @@ table.table {
       th {
         background-color: @background-alt-grey;
         color: @text-default-grey;
+        border-bottom: @border-text-grey;
 
-        &.col-action {
+        &.col-action, &:not(:last-of-type) {
           border-right: @border-text-grey;
         }
       }
@@ -2168,7 +2174,7 @@ table.table {
       th {
         padding: @2v;
         border-bottom: @border-text-grey;
-
+  
         select.form-control {
           border: none;
           border-bottom: @border-thick-text-grey;
@@ -2220,11 +2226,11 @@ table.table {
         color: @text-default-grey;
         border-bottom: @border-disabled-grey;
 
-        &.col-action {
+        &.col-action, &:not(:last-of-type) {
           border-right: @border-text-grey;
 
-          button.btn {
-            background: transparent; // !important ??
+          .dropdown > button.btn {
+            background: transparent; // only for .col-action ...
           }
         }
       }
