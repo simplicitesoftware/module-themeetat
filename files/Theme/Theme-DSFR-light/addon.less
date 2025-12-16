@@ -1068,6 +1068,7 @@ form > .alert {
 .badge {
   padding: @2v;
   border-radius: @1v;
+  // box-shadow: @raised;
 
   &.status,  // contexted in main-menu
   &.count,   // all others
@@ -1128,14 +1129,16 @@ button .badge {
       width: 12.5rem;
       overflow: visible !important; // for outline
     }
-    .searchbox.focus { width: 20rem; }
+    .searchbox.focus {
+      width: 20rem;
+      outline: none !important;
+    }
 
     .searchbox, .searchbox.focus {
-      border-top-left-radius: @1v !important;
-      border-top-right-radius: @1v !important;
       overflow: hidden; // crop sub-corners
 
       .completion {
+        border-top-left-radius: @1v !important;
         border-bottom: @border-thick-action-blue;
         background: @background-contrast-grey;
         color: @text-default-grey;
@@ -1147,6 +1150,7 @@ button .badge {
         padding: @1-5v !important;
         &:hover { background-color: @background-action-high-blue-france-hover !important; }
         &:active { background-color: @background-action-high-blue-france-active !important; }
+        &:last-child { border-top-right-radius: @1v !important; }
       }
     }
   }
@@ -2156,6 +2160,7 @@ ul.pagination {
 /* Tableau */
 table.table {
   border-color: @text-disabled-grey;
+
   thead {
     tr.col-area, tr.head, tr.search {
 
@@ -2257,6 +2262,10 @@ table.table {
       &.actions .btn-action:hover {
         border: @border-action-grey !important;
         border-color: transparent;
+      }
+
+      td.actions .btn-action:hover {
+        border: @border-action-grey;
       }
     }
 
