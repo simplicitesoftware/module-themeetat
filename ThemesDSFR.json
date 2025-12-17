@@ -12,6 +12,23 @@
  },
  "links": [
   {
+   "object": "Disposition",
+   "label": "Dispositions",
+   "icon": "img/system/disposition",
+   "field": "row_module_id",
+   "list": [{
+    "object": "Disposition",
+    "userkey": "dsfr",
+    "item": {
+     "dis_code": "dsfr",
+     "dis_image": null,
+     "dis_class": "com.simplicite.dispositions.UI.Bootstrap",
+     "dis_script_id": null,
+     "row_module_id__mdl_name": "ThemesDSFR"
+    }
+   }]
+  },
+  {
    "object": "Theme",
    "label": "Themes",
    "icon": "img/system/theme",
@@ -143,6 +160,30 @@
    "icon": "img/system/resource",
    "field": "row_module_id",
    "list": [
+    {
+     "object": "Resource",
+     "userkey": "Disposition(dsfr)~ANY~SCRIPT",
+     "item": {
+      "res_object": {
+       "object": "Disposition",
+       "label": "Disposition",
+       "userkeylabel": "dsfr",
+       "icon": "img/system/disposition",
+       "item": {"dis_code": "dsfr"}
+      },
+      "res_type": "JS",
+      "res_lang": "ANY",
+      "res_code": "SCRIPT",
+      "res_cached": false,
+      "res_file": {
+       "path": "resources/Disposition/dsfr/SCRIPT.js",
+       "mime": "text/javascript",
+       "name": "main_script.js"
+      },
+      "res_image": null,
+      "row_module_id__mdl_name": "ThemesDSFR"
+     }
+    },
     {
      "object": "Resource",
      "userkey": "Disposition(default)~ANY~Marianne",

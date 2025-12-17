@@ -674,11 +674,14 @@
 @border-default-grey: solid @0-25v @border-color-grey;
 @border-disabled-grey: solid @0-25v @text-disabled-grey;
 @border-text-grey: solid @0-25v @text-default-grey;
+@border-text-info: solid @0-25v @text-default-info;
 @border-action-blue: solid @0-25v @text-action-high-blue-france;
+@border-default-blue: solid @0-25v var(--blue-france-main-525);
 @border-action-grey: solid @0-25v @text-action-high-grey;
 @border-thick-grey: solid @0-5v @border-color-grey;
 @border-thick-text-grey: solid @0-5v @text-default-grey;
 @border-thick-action-blue: solid @0-5v @text-action-high-blue-france;
+@border-thick-default-blue: solid @0-5v var(--blue-france-main-525);
 @border-thick-action-grey: solid @0-5v @text-action-high-grey;
 @border-focus: solid @0-25v @border-color-focus;
 
@@ -810,7 +813,7 @@ thead.sticky-head {
 // --- Detailled styling (dsfr components mapped to simplicité's usages)
 
 /* Lien */
-a:where(:not([class]), [class=""]):not(:has(img),:has(i)):not([data-item]) { // narrowed to raw links only
+a:where(:not([class],[role="menu-item"],[role="presentation"]),[class=""]):not(:has(img),:has(i)):not([data-item]) { // narrowed to raw links only
   // :has(span),
   color: @text-action-high-blue-france;
   text-decoration: none !important;
@@ -895,6 +898,11 @@ header.header {
 .dropdown.show {
   background: @background-action-low-blue-france;
   color: @text-action-high-blue-france;
+}
+
+.dropdown.completion a {
+  color: @text-label-grey;
+  border-bottom: none;
 }
 
 .dropdown-menu {
@@ -1067,20 +1075,26 @@ form > .alert {
 /* Badge */
 .badge {
   padding: @2v;
-  border-radius: @1v;
+  border-radius: @1v !important;
   // box-shadow: @raised;
 
-  &.status,  // contexted in main-menu
+  color: @text-default-info !important;
+  background: var(--info-950) !important;
+  border: @border-text-info;
+
+  /*&.status,  // contexted in main-menu
   &.count,   // all others
   &.filter { // specific to lists' headers
     color: @text-default-info !important;
     background: var(--info-950) !important;
-  }
+    border: @border-text-info;
+  }*/
 }
 
-.btn-shortcut > .badge, li[data-shortcut="Notifications"] > .badge {
+.btn-shortcut[data-shortcut*="Notifications"] > .badge, li[data-shortcut*="Notifications"] > .badge {
   color: var(--yellow-tournesol-sun-407) !important;
   background: var(--yellow-tournesol-950) !important;
+  border-color: var(--yellow-tournesol-sun-407) !important;
 }
 
 .filters > .filter {
@@ -1126,7 +1140,8 @@ button .badge {
     border: none;
 
     .searchbox {
-      width: 12.5rem;
+      width: 20rem;
+      height: 2.5rem;
       overflow: visible !important; // for outline
     }
     .searchbox.focus {
@@ -1147,7 +1162,7 @@ button .badge {
         background-color: @background-action-high-blue-france !important;
         color: @text-inverted-blue-france !important;
         border-radius: @0v !important;
-        padding: @1-5v !important;
+        padding: @2v !important;
         &:hover { background-color: @background-action-high-blue-france-hover !important; }
         &:active { background-color: @background-action-high-blue-france-active !important; }
         &:last-child { border-top-right-radius: @1v !important; }
@@ -1156,6 +1171,7 @@ button .badge {
   }
 
   .btn-shortcut {
+    .icon { color: @text-action-high-blue-france; }
     &:hover { background-color: @background-default-grey-hover; }
     &:active { background-color: @background-default-grey-active; }
   }
@@ -1383,6 +1399,10 @@ button.btn:not(.disabled), a.btn:not(.disabled) {
     }
   }
 
+  img.icon {
+    vertical-align: initial;
+  }
+
   &:focus { // same for all
     outline: @border-focus;
     outline-offset: @0-5v;
@@ -1511,6 +1531,10 @@ input[type="checkbox"], input.selrow {
   }
 }
 
+.export-data #csvsep input {
+  width: @4-5v;
+}
+
 /* Champ de saisie */
 .field, .field-string, .field-email, .field-regexp, .row, .fields-row {
   label {
@@ -1604,6 +1628,7 @@ input[type="checkbox"], input.selrow {
     }
     &:focus, &.active {
       background: @background-alt-grey-active;
+      box-shadow: none !important;
     }
   }
 
@@ -1664,6 +1689,9 @@ input[type="checkbox"], input.selrow {
 
   .doc-multi i.fa-plus::before {
     color: @background-default-grey;
+  }
+  .doc-multi label {
+    border-radius: 50% !important;
   }
 }
 
@@ -2027,6 +2055,94 @@ label.btn-switch {
   }
 }
 
+.treeview {
+  & > div .card > .card-body { background: @background-default-grey; }
+
+  ul.sub-menu {  // treeview specifics (same component)
+    background: @background-default-grey;
+
+    & > li {
+      a {
+        font-weight: bold;
+        background: transparent;
+
+        &::before {
+          height: 66%;
+          width:  @0-5v;
+          top: @1-5v;
+          background: @background-action-high-blue-france;
+        }
+
+        &:focus {
+          outline: none !important;
+        }
+        &:hover {
+          background: transparent;
+        }
+
+        & > button.btn-default:hover {
+          background: transparent;
+          color: inherit;
+        }
+
+        &.blank { display: none; }
+      }
+
+      &:hover > a { background: @background-default-grey-hover; }
+
+      &.active > a {
+        color: @text-action-high-blue-france;
+        background: @background-action-low-blue-france;
+
+        &::before {
+          content:'';
+          position: absolute;
+          height: 66%;
+          width:  @0-5v;
+          top: @1-5v;
+          left: @0v;
+          background: @background-action-high-blue-france;
+        }
+      }
+
+      &.menu-sel {
+        background: transparent !important;
+        & > a {
+          color: @text-action-high-blue-france;
+          &::before {
+            content:'';
+            position: absolute;
+            height: 66%;
+            width:  @0-5v;
+            top: @1-5v;
+            left: @0v;
+            background: @background-action-high-blue-france;
+          }
+        }
+      }
+    }
+  }
+
+  &.layout-connected {
+
+    ul.root-ul > li::before {
+      display: none;
+    }
+
+    .sub-menu ul::after {
+      border-left-color: @background-action-high-blue-france;
+    }
+    .sub-menu li::before {
+      border-left-color: @background-action-high-blue-france;
+      border-bottom-color: @background-action-high-blue-france;
+    }
+
+    li:not(.link) a::before {
+      display: none;
+    }
+  }
+}
+
 /* Modale */
 .modal-dialog {
   .modal-content {
@@ -2034,10 +2150,18 @@ label.btn-switch {
       position: relative;
       border-bottom: none !important;
       padding-left: @11v;
+
       h3 { 
         color: @text-title-grey;
         font-weight: bold;
         margin-bottom: @4v;
+      }
+      & > div { // case of social posts, populated headers
+        padding-top: @6v;
+        
+        h3 {
+          margin-left: @8v; // pad ?
+        }
       }
 
       &:has(h3) {
@@ -2158,7 +2282,7 @@ ul.pagination {
 }
 
 /* Tableau */
-table.table {
+.container-table table.table {
   border-color: @text-disabled-grey;
 
   thead {
@@ -2320,37 +2444,56 @@ table.table {
 }
 
 /* Cartes */
-.obj-summary {
-  background: @background-default-grey;
-  box-shadow: @raised !important;
-  .title {
+form > .masonry { // only when in 'masonry' list layout
+  .obj-summary {
     background: @background-default-grey;
-    color: @text-action-high-blue-france;
-    border-bottom: none;
-    padding-bottom: @0v;
-    .title-group .obj-title-group .obj-title {
-      font-weight: 600;
+    box-shadow: @raised !important;
+    .title {
+      background: @background-default-grey;
+      color: @text-action-high-blue-france;
+      border-bottom: none;
+      padding-bottom: @0v;
+      .title-group .obj-title-group .obj-title {
+        font-weight: 600;
+      }
+
+      button:hover {
+        background: @background-default-grey-active !important;
+      }
     }
-  }
-  .obj-actions {
-    background: @background-default-grey;
-    border-top: none;
-    .actions {
-      padding: @0v;
-      button {
-        margin-left: @0v;
-        margin-right: @0v;
-        &:hover {
-          background: @background-default-grey-active !important;
+    .obj-actions {
+      background: @background-default-grey;
+      border-top: none;
+      .actions {
+        padding: @0v;
+        button {
+          margin-left: @0v;
+          margin-right: @0v;
+          &:hover {
+            background: @background-default-grey-active !important;
+          }
         }
       }
     }
-  }
 
-  &:hover {
-    background: @background-default-grey-hover;
-    .title, .infos, .obj-actions, .obj-actions>.actions>button, .title>.title-plus>.actions>.dropdown>button.btn {
+    &:hover {
       background: @background-default-grey-hover;
+      .title, .infos, .obj-actions, .obj-actions>.actions>button, .title>.title-plus>.actions>.dropdown>button.btn {
+        background: @background-default-grey-hover;
+      }
+    }
+
+    &::after {
+      content:'';
+      position: absolute;
+      bottom: @6v;
+      right: @4-5v;
+      width: @3-5v;
+      height: @3-5v;
+      background-image: url("data:image/svg+xml,%3Csvg width='22' height='21' viewBox='0 0 22 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.2293 9.03733L9.07733 1.88533L10.9627 0L21.3333 10.3707L10.9627 20.7413L9.07733 18.856L16.2293 11.704H0V9.03733H16.2293Z' fill='%23000091'/%3E%3C/svg%3E");
+      background-size: 100%;
+      background-position: 0 0;
+      background-repeat: no-repeat;
     }
   }
 }
@@ -2384,3 +2527,69 @@ table.table {
     }
   }
 }
+
+/* Treeviews specificities */
+
+/* Datetime picker specificities (simplicité) */
+.datetimepicker {
+  th.today {
+    background-color: @background-alt-grey;
+  }
+  td.today {
+    background-image: none !important;
+    background-color: var(--yellow-moutarde-850) !important;
+  }
+  .active {
+    background-image: none !important;
+    background-color: @background-action-high-blue-france !important;
+  }
+
+  .today.active {
+    background-color: @background-action-high-blue-france !important;
+  }
+}
+
+/* Social Posts & Comments (almost "Mise en excèrgue")" */
+ .social {
+  .post {
+    background: none;
+    &.focus {
+      background-color: @background-action-low-blue-france;
+      .msg { background-color: @background-action-low-blue-france; }
+    }
+
+    &.create {
+      border: @border-default-grey;
+      margin-top: @2v;
+    }
+    &:not(.create) {
+      padding: @3v;
+      border-left:  @border-thick-default-blue;
+      border-width: @1v;
+      margin-left: @8v;
+      margin-top: @4v;
+    }
+  }
+
+  // specific to "design audit" widget
+  &.info {  }
+  &.warning {  }
+  &.error {  }
+  &.closed {  }
+ }
+
+ .notepad {
+  textarea.hist {
+    width: 97%; // meh
+    resize: none; // meh bis
+    border-top-left-radius: @0v !important;
+    border-top-right-radius: @0v !important;
+    background: transparent !important;
+    border-bottom: none !important;
+    padding-left: @5v;
+    border-left: @border-thick-default-blue;
+    border-width: @1v;
+    margin-top: @2v;
+    margin-left: @4v;
+  }
+ }
