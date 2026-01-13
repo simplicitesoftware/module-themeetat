@@ -748,18 +748,23 @@ header.header, footer.footer, #menu, main#work {
 }
 
 .top-bar { // absolute units to ease calculations...
-  height: 80px;
-  box-shadow: @raised !important;
+  height: 104px;
   .header {
-    height: 80px;
+    height: 104px;
     border-bottom: @border-default-grey;
+    .main-nav-toggle {
+      display: none;
+    }
+    .logo img {
+      max-height: 64px;
+    }
   }
 
   /*&:not(:has(.bar-bookmarks)) .header {
     box-shadow: @raised !important;
   }*/
 }
-.middle-bar { top: 80px; }
+.middle-bar { top: 104px; }
 .footer-bar .footer { border-top: @border-default-grey; }
 
 .bar-bookmarks {
@@ -781,12 +786,12 @@ header.header, footer.footer, #menu, main#work {
 @media screen and (min-width: 768px) { // calculations for bookmarks bar viz/hide
   .bookmarks-top {
     .top-bar {
-      height: 120px;
+      height: 144px; // 104 + 40
       .bar-bookmarks {
         border-bottom: @border-default-grey;
       }
     }
-    .middle-bar { top: 120px; }
+    .middle-bar { top: 144px; }
   }
   .bookmarks-bottom {
     .middle-bar { bottom: 60px; }
@@ -1736,14 +1741,14 @@ input[type="checkbox"], input.selrow {
   color: @background-default-grey !important;
   background: @background-default-grey !important;
 
-	.tooltip-inner {
-		color: @text-default-grey;
-		background-color: @background-default-grey;
-	}
-	.subtitle {
-		display: block;
-		color: @text-mention-grey;
-	}
+    .tooltip-inner {
+        color: @text-default-grey;
+        background-color: @background-default-grey;
+    }
+    .subtitle {
+        display: block;
+        color: @text-mention-grey;
+    }
 }
 .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
   border-top-color: @background-default-grey !important;
@@ -1759,10 +1764,10 @@ input[type="checkbox"], input.selrow {
 }
 
 .popover {
-	color: @text-default-grey;
-	background: none;
-	border: none;
-	border-radius: @0v;
+    color: @text-default-grey;
+    background: none;
+    border: none;
+    border-radius: @0v;
   box-shadow: @detached !important;
 
   .popover-arrow {
@@ -1770,20 +1775,20 @@ input[type="checkbox"], input.selrow {
     border: none !important;
   }
 
-	.popover-header {
-		background: @background-default-grey;
-		color: @text-default-grey;
-		border: none;
-		border-bottom: none;
+    .popover-header {
+        background: @background-default-grey;
+        color: @text-default-grey;
+        border: none;
+        border-bottom: none;
     font-weight: 600;
     margin-bottom: @0v !important;
-	}
-	.popover-body {
-		background: @background-default-grey;
-		color: @text-default-grey;
-		border: none;
+    }
+    .popover-body {
+        background: @background-default-grey;
+        color: @text-default-grey;
+        border: none;
     margin-top: @0v !important;
-	}
+    }
 }
 
 /* Interrupteur  */
@@ -1987,74 +1992,103 @@ label.btn-switch {
   }
 }
 
-/* Menu latéral */
-#menu {
-  border-right: @border-thick-grey;
-  padding-right: @1v;
-  padding-top: @2v;
-  color: @text-label-grey;
+/* Navigation Principale */
+/*
+.simplicite.wrapper > .middle-bar {
+  display: flex;
+  flex-direction: column;
+  
+  #menu {
+    width: 100%;
+    height: fit-content;
+    overflow:visible;
+    
+    .search-bar {
+        display: none;
+    }
 
-  nav.main-nav {
-    ul.main-menu {
-      padding-left: @1v;
-
+    .main-menu {
+      box-shadow: @raised !important;
+      background: @background-default-grey;
+    }
+    
+    .main-menu > li:only-child > .sub-menu {
+      display: flex !important;
+      
+      li > a {
+        padding: @6v @6v;
+        background: transparent;
+        
+        &.js-sub-menu-toggle {
+          padding-right: @10v;
+          
+          &::after {
+            right: @5v;
+            top: @7v;
+          }
+        }
+        &:hover {
+          background-color: @background-default-grey-hover;
+        }
+      }
+      li > a > .ico {
+        display: none;
+      }
       li {
-        a {
-          font-weight: bold;
-          &:focus {
-            outline: none !important;
-          }
+        position: relative;
+        .sub-menu {
+          position: absolute;
+          background: @background-default-grey;
+          box-shadow: @overlap !important;
         }
 
-        &:hover > a { background: @background-default-grey-hover; }
-
-        &.active { // disabling this when #menu .main-nav .searchbar .input-group:has(.visible)
-          & > a {
-            color: @text-action-high-blue-france;
-            background: @background-action-low-blue-france;
-
-            &::before {
-              content:'';
-              position: absolute;
-              height: 66%;
-              width:  @0-5v;
-              top: @1-5v;
-              left: @0v;
-              background: @background-action-high-blue-france;
-            }
+        &.active > a.js-sub-menu-toggle {
+          background-color: @background-action-low-blue-france;
+          color: @text-action-high-blue-france;
+        }
+      }
+    }
+    
+    .main-menu:has(li:not(:only-child)) {
+      display: flex !important;
+      
+      li > a {
+        padding: @6v @6v;
+        background: transparent;
+        
+        &.js-sub-menu-toggle {
+          padding-right: @10v;
+          
+          &::after {
+            right: @5v;
+            top: @7v;
           }
         }
-
-        a {
-          background: transparent;
-
-          &::before {
-            height: 66%;
-            width:  @0-5v;
-            top: @1-5v;
-            background: @background-action-high-blue-france;
-          }
-
-          &.menu-sel {
-            color: @text-action-high-blue-france;
-          }
+        &:hover {
+          background-color: @background-default-grey-hover;
         }
-        ul.sub-menu > li {
-          a {
-            font-weight: normal;
-            padding-left: @5v;
-          }
+      }
+      li > a > .ico {
+        display: none;
+      }
+      li:not(:only-child) {
+        position: relative;
+        .sub-menu {
+            position: absolute;
+            background: @background-default-grey;
+            box-shadow: @overlap !important;
+        }
 
-          & > ul.sub-menu > li > a {
-            font-weight: normal;
-            padding-left: @9v;
-          }
+        &.active > a.js-sub-menu-toggle {
+          background-color: @background-action-low-blue-france;
+          color: @text-action-high-blue-france;
         }
       }
     }
   }
 }
-
+*/
+/* Menu latéral */
 .treeview {
   & > div .card > .card-body { background: @background-default-grey; }
 
