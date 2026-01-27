@@ -712,7 +712,8 @@
   box-shadow: none !important;
 }
 
-*:focus {
+*:focus,
+*:focus-visible {
   outline: @border-focus !important;
   outline-offset: @0-5v;
 }
@@ -752,11 +753,15 @@ header.header, footer.footer, #menu, main#work {
   .header {
     height: 104px;
     border-bottom: @border-default-grey;
-    .main-nav-toggle {
-      display: none;
-    }
+    //.main-nav-toggle {
+    //  display: none;
+    //}
     .logo img {
       max-height: 64px;
+    }
+    
+    .logo a:focus, .logo a:focus-visible {
+        outline-offset: 0.25rem !important;
     }
   }
 
@@ -765,7 +770,13 @@ header.header, footer.footer, #menu, main#work {
   }*/
 }
 .middle-bar { top: 104px; }
-.footer-bar .footer { border-top: @border-default-grey; }
+.footer-bar .footer {
+    border-top: @border-default-grey;
+    
+    a:focus {
+        color: @text-action-high-blue-france !important;
+    }
+}
 
 .bar-bookmarks {
   padding: 0px 32px;
@@ -831,11 +842,6 @@ a:where(:not([class],[role="menu-item"],[role="presentation"]),[class=""]):not(:
     border-bottom-width: @0-5v;
     background: @background-alt-grey-hover;
   }
-  &:focus {
-    border-bottom-color: transparent;
-    outline: @border-focus;
-    outline-offset: @0-5v;
-  }
 }
 
 /* En-tête */
@@ -889,6 +895,10 @@ header.header {
       &:hover {
         background-color: @background-action-low-blue-france;
       }
+      
+      &:focus, &:focus-visible {
+          outline-offset: @n1v !important;
+      }
     }
   }
 }
@@ -941,11 +951,15 @@ header.header {
     &:checked {
       background-color: @background-action-high-blue-france !important;
     }
-    &:focus {
-      outline: @border-focus;
-      outline-offset: @0-5v;
-    }
   }
+}
+
+.dropdown-menu:has(.user-profile) > li > a:focus-visible {
+    outline-offset: @1v !important;
+}
+
+.header .shortcuts > li .btn-pin&:focus-visible {
+    opacity: 1;
 }
 
 /* En-tête connectée (user) */
@@ -1148,6 +1162,10 @@ button .badge {
       width: 20rem;
       height: 2.5rem;
       overflow: visible !important; // for outline
+      
+      button.btn:focus-visible {
+          outline-color: lighten(@border-color-focus, 50%) !important;
+      }
     }
     .searchbox.focus {
       width: 20rem;
@@ -1275,8 +1293,6 @@ button .badge {
       border-top-right-radius: @1v !important;
     }
   }
-
-  &:has(.form-control:focus) { outline: none; }
 }
 
 #indexSearch_3 { // index-search bar with regular ".btn-secondary" (not embedded)
@@ -1407,11 +1423,6 @@ button.btn:not(.disabled), a.btn:not(.disabled) {
   img.icon {
     vertical-align: initial;
   }
-
-  &:focus { // same for all
-    outline: @border-focus;
-    outline-offset: @0-5v;
-  }
 }
 
 button.btn.disabled {
@@ -1456,11 +1467,6 @@ button.btn.disabled {
       border: @border-action-blue !important;
       width: @4-5v !important;
       height: @4-5v !important;
-
-      &:focus {
-        outline: @border-focus;
-        outline-offset: @0-5v;
-      }
     }
     label.form-check-label {
       padding-top: @0-5v; // @1-25v ??
@@ -1492,10 +1498,6 @@ button.btn.disabled {
       &:checked {
         background-color: @background-action-high-blue-france !important;
         border-color: @background-action-high-blue-france !important;
-      }
-      &:focus {
-        outline: @border-focus;
-        outline-offset: @0-5v;
       }
     }
     label.form-check-label {
@@ -1529,11 +1531,6 @@ input[type="checkbox"], input.selrow {
       opacity: 1;
     }
   }
-  &:focus {
-    outline: @border-focus;
-    outline-offset: @0-5v;
-    border-radius: @1v !important;
-  }
 }
 
 .export-data #csvsep input {
@@ -1556,10 +1553,6 @@ input[type="checkbox"], input.selrow {
 
     &:last-child {
       border-top-right-radius: @1v !important;
-    }
-    &:focus {
-      outline: @border-focus;
-      outline-offset: @0-5v;
     }
   }
   .input-group-text {
@@ -1631,7 +1624,7 @@ input[type="checkbox"], input.selrow {
     &:hover {
       background: @background-alt-grey-hover;
     }
-    &:focus, &.active {
+    &.active {
       background: @background-alt-grey-active;
       box-shadow: none !important;
     }
@@ -1705,10 +1698,6 @@ input[type="checkbox"], input.selrow {
   input[type="range"] {
     --webkit-appearance: auto !important;
     --moz-appearance: auto !important;
-
-    &:focus { // focus only thumb, not body
-      outline: none !important;
-    }
   }
 }
 
@@ -1993,8 +1982,70 @@ label.btn-switch {
 }
 
 /* Navigation Principale */
-/*
-.simplicite.wrapper > .middle-bar {
+#menu {
+  border-right: @border-thick-grey;
+  padding-right: @1v;
+  padding-top: @2v;
+  color: @text-label-grey;
+
+  nav.main-nav {
+    ul.main-menu {
+      padding-left: @1v;
+
+      li {
+        a {
+          font-weight: bold;
+        }
+
+        &:hover > a { background: @background-default-grey-hover; }
+
+        &.active { // disabling this when #menu .main-nav .searchbar .input-group:has(.visible)
+          & > a {
+            color: @text-action-high-blue-france;
+            background: @background-action-low-blue-france;
+
+            &::before {
+              content:'';
+              position: absolute;
+              height: 66%;
+              width:  @0-5v;
+              top: @1-5v;
+              left: @0v;
+              background: @background-action-high-blue-france;
+            }
+          }
+        }
+
+        a {
+          background: transparent;
+
+          &::before {
+            height: 66%;
+            width:  @0-5v;
+            top: @1-5v;
+            background: @background-action-high-blue-france;
+          }
+
+          &.menu-sel {
+            color: @text-action-high-blue-france;
+          }
+        }
+        ul.sub-menu > li {
+          a {
+            font-weight: normal;
+            padding-left: @5v;
+          }
+
+          & > ul.sub-menu > li > a {
+            font-weight: normal;
+            padding-left: @9v;
+          }
+        }
+      }
+    }
+  }
+}
+/*.simplicite.wrapper > .middle-bar {
   display: flex;
   flex-direction: column;
   
@@ -2086,8 +2137,8 @@ label.btn-switch {
       }
     }
   }
-}
-*/
+}*/
+
 /* Menu latéral */
 .treeview {
   & > div .card > .card-body { background: @background-default-grey; }
@@ -2105,10 +2156,6 @@ label.btn-switch {
           width:  @0-5v;
           top: @1-5v;
           background: @background-action-high-blue-france;
-        }
-
-        &:focus {
-          outline: none !important;
         }
         &:hover {
           background: transparent;
@@ -2348,10 +2395,6 @@ ul.pagination {
           &:last-child {
             border-top-right-radius: @1v !important;
           }
-          &:focus {
-            outline: @border-focus;
-            outline-offset: @0-5v;
-          }
         }
       }
     }
@@ -2384,8 +2427,13 @@ ul.pagination {
 
   tbody {
     tr {
+    
+      &:focus, &:focus-visible {
+          outline-width: 0.125rem !important;
+          outline-offset: -2px;
+      }
       td {
-        background: @background-default-grey;
+        background: transparent !important;
         color: @text-default-grey;
         border-bottom: @border-disabled-grey;
 
@@ -2399,15 +2447,13 @@ ul.pagination {
       }
 
       &:nth-of-type(odd) td {
-        background: @background-default-grey;
+        background: transparent !important;
       }
 
       &:hover td {
         background: @background-contrast-grey !important;
         color: @text-default-grey !important;
       }
-
-      &:focus { outline: none !important; }
 
       &.group-by-title {
         &:not(.active):hover td { background-color: @background-contrast-grey-hover !important; }
