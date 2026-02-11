@@ -1315,7 +1315,7 @@ button .badge {
 }
 
 tr.search { // filter search in lists
-  .input-group.searchby {
+  .input-group { // .searchby only ??
     input.search-control:not(.form-check-input), input.form-control:not(.form-check-input) {
       border-bottom: @border-thick-action-blue;
       background: @background-contrast-grey;
@@ -1347,7 +1347,7 @@ tr.search { // filter search in lists
         border-top-right-radius: @1v !important;
       }
 
-      i {
+      i, span {
       	opacity: 1;
       	outline-color: lighten(@border-color-focus, 50%) !important;
       	
