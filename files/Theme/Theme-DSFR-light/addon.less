@@ -683,7 +683,7 @@
 @border-thick-action-blue: solid @0-5v @text-action-high-blue-france;
 @border-thick-default-blue: solid @0-5v var(--blue-france-main-525);
 @border-thick-action-grey: solid @0-5v @text-action-high-grey;
-@border-focus: solid @0-25v @border-color-focus;
+@border-focus: solid @0-5v @border-color-focus;
 
 // Margin bottoms
 // Titles
@@ -1170,6 +1170,7 @@ button .badge {
       
       button.btn:focus-visible {
           outline-color: lighten(@border-color-focus, 50%) !important;
+          outline-offset: -4px;
       }
     }
     .searchbox.focus {
@@ -1329,11 +1330,17 @@ tr.search { // filter search in lists
         background-color: @background-contrast-grey;
       }
     }
+    .form-control {
+      height: @8v;
+   	  min-height: @8v;
+    }
     .input-group-text {
+      height: @8v;
+      min-height: @8v;
       margin-left: @0v;
       background-color: @background-action-high-blue-france;
       color: @text-inverted-blue-france;
-      padding: @1-5v; // @1v
+      padding: @2v; // @1v
       border-radius: @0v !important;
 
       &:last-child {
@@ -1343,6 +1350,7 @@ tr.search { // filter search in lists
       i {
       	opacity: 1;
       	outline-color: lighten(@border-color-focus, 50%) !important;
+      	
       }
       &:hover {
         background-color: @background-action-high-blue-france-hover !important;
@@ -2388,7 +2396,7 @@ ul.pagination {
         color: @text-default-grey;
         border-bottom: @border-text-grey;
 
-        &.col-action, &:not(:last-of-type) {
+        &.col-action { // &:not(:last-of-type)
           border-right: @border-text-grey;
         }
       }
@@ -2451,7 +2459,7 @@ ul.pagination {
         color: @text-default-grey;
         border-bottom: @border-disabled-grey;
 
-        &.col-action, &:not(:last-of-type) {
+        &.col-action { // &:not(:last-of-type)
           border-right: @border-text-grey;
 
           .dropdown > button.btn {
