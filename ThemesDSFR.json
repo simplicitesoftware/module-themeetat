@@ -42,18 +42,18 @@
       "thm_logo_id": {
        "path": "files/Theme/Theme-DSFR-dark/logo.png",
        "mime": "image/png",
-       "name": "dsfr-headerlogo.png"
+       "name": "logo.png"
       },
       "thm_logo_invert": null,
       "thm_logo2_id": {
        "path": "files/Theme/Theme-DSFR-dark/logo2.png",
        "mime": "image/png",
-       "name": "dsfr-scope.png"
+       "name": "logo2.png"
       },
       "thm_favicon_id": {
        "path": "files/Theme/Theme-DSFR-dark/favicon.png",
        "mime": "image/png",
-       "name": "dsfr-favicon.png"
+       "name": "favicon.png"
       },
       "thm_color1": null,
       "thm_color2": null,
@@ -69,7 +69,7 @@
       "thm_addon": {
        "path": "files/Theme/Theme-DSFR-dark/addon.less",
        "mime": "text/x-less",
-       "name": "Theme-DSFR-dark.less"
+       "name": "addon.less"
       },
       "thm_searchbox": null,
       "thm_active": null,
@@ -101,18 +101,18 @@
       "thm_logo_id": {
        "path": "files/Theme/Theme-DSFR-light/logo.png",
        "mime": "image/png",
-       "name": "dsfr-headerlogo.png"
+       "name": "logo.png"
       },
       "thm_logo_invert": null,
       "thm_logo2_id": {
        "path": "files/Theme/Theme-DSFR-light/logo2.png",
        "mime": "image/png",
-       "name": "dsfr-scope.png"
+       "name": "logo2.png"
       },
       "thm_favicon_id": {
        "path": "files/Theme/Theme-DSFR-light/favicon.png",
        "mime": "image/png",
-       "name": "dsfr-favicon.png"
+       "name": "favicon.png"
       },
       "thm_color1": null,
       "thm_color2": null,
@@ -128,7 +128,7 @@
       "thm_addon": {
        "path": "files/Theme/Theme-DSFR-light/addon.less",
        "mime": "text/x-less",
-       "name": "ThemeDSFR-extended.less"
+       "name": "addon.less"
       },
       "thm_searchbox": null,
       "thm_active": null,
@@ -178,7 +178,7 @@
       "res_file": {
        "path": "resources/Disposition/dsfr/SCRIPT.js",
        "mime": "text/javascript",
-       "name": "main_script.js"
+       "name": "SCRIPT.js"
       },
       "res_image": null,
       "row_module_id__mdl_name": "ThemesDSFR"
@@ -226,7 +226,7 @@
       "res_file": {
        "path": "resources/Disposition/default/ICONS_DSFR.zip",
        "mime": "application/zip",
-       "name": "icons 2.zip"
+       "name": "ICONS_DSFR.zip"
       },
       "res_image": null,
       "row_module_id__mdl_name": "ThemesDSFR"
@@ -250,7 +250,7 @@
       "res_file": {
        "path": "resources/Disposition/default/ICONS_DSFR_PICTOS.zip",
        "mime": "application/zip",
-       "name": "icons.zip"
+       "name": "ICONS_DSFR_PICTOS.zip"
       },
       "res_image": null,
       "row_module_id__mdl_name": "ThemesDSFR"

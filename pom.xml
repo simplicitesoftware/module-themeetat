@@ -13,7 +13,7 @@ ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
   <description>Simplicite module: ThemesDSFR</description>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <simplicite.url>https://abelsandbox.dev2.simplicite.io</simplicite.url>
+    <simplicite.url>http://localhost:8080</simplicite.url>
     <simplicite.version>6.3-SNAPSHOT</simplicite.version>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
@@ -91,12 +91,6 @@ ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
       <groupId>com.simplicite</groupId>
       <artifactId>simplicite-api</artifactId>
       <version>${simplicite.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.simplicite</groupId>
-      <artifactId>simplicite-api</artifactId>
-      <version>${simplicite.version}</version>
-      <classifier>javadoc</classifier>
     </dependency>
   </dependencies>
 </project>

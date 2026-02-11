@@ -1031,6 +1031,11 @@ header.header {
       color: @text-action-high-blue-france !important;
     }
   }
+  
+  // not accordion related
+  .actions > * {
+  	margin-right: @1v !important; // header & footer only ?
+  }
 }
 
 /* Alerte */
@@ -1328,14 +1333,17 @@ tr.search { // filter search in lists
       margin-left: @0v;
       background-color: @background-action-high-blue-france;
       color: @text-inverted-blue-france;
-      padding: @1v;
+      padding: @1-5v; // @1v
       border-radius: @0v !important;
 
       &:last-child {
         border-top-right-radius: @1v !important;
       }
 
-      i { opacity: 1; }
+      i {
+      	opacity: 1;
+      	outline-color: lighten(@border-color-focus, 50%) !important;
+      }
       &:hover {
         background-color: @background-action-high-blue-france-hover !important;
         cursor: pointer;
@@ -2367,6 +2375,12 @@ ul.pagination {
   border-color: @text-disabled-grey;
 
   thead {
+  	
+  	tr:focus, tr:focus-visible {
+        outline-width: 0.125rem !important;
+        outline-offset: -2px;
+    }
+    
     tr.col-area, tr.head, tr.search {
 
       th {
