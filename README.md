@@ -1,15 +1,5 @@
-<!--
- ___ _            _ _    _ _    __
-/ __(_)_ __  _ __| (_)__(_) |_ /_/
-\__ \ | '  \| '_ \ | / _| |  _/ -_)
-|___/_|_|_|_| .__/_|_\__|_|\__\___|
-            |_| 
--->
-![](https://platform.simplicite.io/logos/standard/logo250.png)
+![Logo](https://platform.simplicite.io/logos/standard/logo250.png)
 * * *
-
-`ThemeEtat` module definition
-=============================
 
 Theme inspiré du [**Système de Design de l'État**](https://www.systeme-de-design.gouv.fr/composants-et-modeles)
 

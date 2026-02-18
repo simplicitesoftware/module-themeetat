@@ -1,0 +1,199 @@
+{
+ "object": "Module",
+ "userkey": "ThemeEtat",
+ "item": {
+  "mdl_name": "ThemeEtat",
+  "mdl_prefix": null,
+  "mdl_version": "6",
+  "mdl_type": "C",
+  "mdl_icon": null,
+  "mdl_url": "{\n    \"origin\": {\"uri\": \"https://github.com/simplicitesoftware/module-themeetat.git\"},\n    \"type\": \"git\",\n    \"branch\": \"v6\"\n}",
+  "mdl_comment": "Theme inspiré du [**Système de Design de l'État**](https://www.systeme-de-design.gouv.fr/composants-et-modeles)"
+ },
+ "links": [
+  {
+   "object": "Theme",
+   "label": "Themes",
+   "icon": "img/system/theme",
+   "field": "row_module_id",
+   "list": [
+    {
+     "object": "Theme",
+     "userkey": "ThemeDSFR",
+     "item": {
+      "thm_name": "ThemeDSFR",
+      "thm_logo_id": {
+       "path": "files/Theme/ThemeDSFR/logo.png",
+       "mime": "image/png",
+       "name": "dsfr-headerlogo.png"
+      },
+      "thm_logo_invert": null,
+      "thm_logo2_id": {
+       "path": "files/Theme/ThemeDSFR/logo2.png",
+       "mime": "image/png",
+       "name": "dsfr-scope.png"
+      },
+      "thm_favicon_id": {
+       "path": "files/Theme/ThemeDSFR/favicon.png",
+       "mime": "image/png",
+       "name": "dsfr-favicon.png"
+      },
+      "thm_color1": null,
+      "thm_color2": null,
+      "thm_text2": null,
+      "thm_color3": null,
+      "thm_text3": null,
+      "thm_base": "light",
+      "thm_css_doc": {
+       "path": "files/Theme/ThemeDSFR/ThemeDSFR_gen.css",
+       "mime": "text/css",
+       "name": "ThemeDSFR_gen.css"
+      },
+      "thm_addon": {
+       "path": "files/Theme/ThemeDSFR/addon.less",
+       "mime": "text/x-less",
+       "name": "ThemeDSFR-extended.less"
+      },
+      "thm_searchbox": null,
+      "thm_active": null,
+      "thm_font": "Marianne",
+      "thm_font_mono": null,
+      "thm_iconset": null,
+      "thm_code_editor_theme": "dreamwaver",
+      "thm_html_editor_theme": "LIGHT",
+      "thm_menu_dom_c": null,
+      "thm_menu_dom_t": null,
+      "thm_menu_dact_c": null,
+      "thm_menu_dact_t": null,
+      "thm_menu_sub_c": null,
+      "thm_menu_sub_t": null,
+      "thm_menu_sact_c": null,
+      "thm_menu_sact_t": null,
+      "thm_menu_sta_c": null,
+      "thm_menu_sta_t": null,
+      "thm_compact": false,
+      "row_module_id__mdl_name": "ThemeEtat",
+      "thm_const": null
+     }
+    },
+    {
+     "object": "Theme",
+     "userkey": "ThemeEtat",
+     "item": {
+      "thm_name": "ThemeEtat",
+      "thm_logo_id": {
+       "path": "files/Theme/ThemeEtat/logo.png",
+       "mime": "image/png",
+       "name": "logo.png"
+      },
+      "thm_logo_invert": false,
+      "thm_logo2_id": {
+       "path": "files/Theme/ThemeEtat/logo2.png",
+       "mime": "image/png",
+       "name": "logo2.png"
+      },
+      "thm_favicon_id": {
+       "path": "files/Theme/ThemeEtat/favicon.png",
+       "mime": "image/png",
+       "name": "favicon.png"
+      },
+      "thm_color1": "#FFFFFF",
+      "thm_color2": "#FFFFFF",
+      "thm_text2": "#000091",
+      "thm_color3": "#FFFFFF",
+      "thm_text3": "#000091",
+      "thm_base": "light",
+      "thm_css_doc": {
+       "path": "files/Theme/ThemeEtat/ThemeEtat_gen.css",
+       "mime": "text/css",
+       "name": "ThemeEtat_gen.css"
+      },
+      "thm_addon": {
+       "path": "files/Theme/ThemeEtat/addon.less",
+       "mime": "text/x-less",
+       "name": "addon.less"
+      },
+      "thm_searchbox": "#F7F7F7",
+      "thm_active": null,
+      "thm_font": "Marianne",
+      "thm_font_mono": null,
+      "thm_iconset": null,
+      "thm_code_editor_theme": null,
+      "thm_html_editor_theme": "LIGHT",
+      "thm_menu_dom_c": "#FFFFFF",
+      "thm_menu_dom_t": "#000091",
+      "thm_menu_dact_c": "#FFFFFF",
+      "thm_menu_dact_t": "#000091",
+      "thm_menu_sub_c": "#FFFFFF",
+      "thm_menu_sub_t": "#000091",
+      "thm_menu_sact_c": "#FFFFFF",
+      "thm_menu_sact_t": "#000091",
+      "thm_menu_sta_c": "#FFFFFF",
+      "thm_menu_sta_t": "#4949C8",
+      "thm_compact": false,
+      "row_module_id__mdl_name": "ThemeEtat",
+      "thm_const": {
+       "path": "files/Theme/ThemeEtat/const.less",
+       "mime": "text/x-less",
+       "name": "const.less"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "object": "Resource",
+   "label": "Resources",
+   "icon": "img/system/resource",
+   "field": "row_module_id",
+   "list": [{
+    "object": "Resource",
+    "userkey": "Disposition(default)~ANY~themeetat-module",
+    "item": {
+     "res_object": {
+      "object": "Disposition",
+      "label": "Disposition",
+      "userkeylabel": "default",
+      "icon": "img/system/disposition",
+      "item": {"dis_code": "default"}
+     },
+     "res_type": "IMG",
+     "res_lang": "ANY",
+     "res_code": "themeetat-module",
+     "res_cached": false,
+     "res_file": null,
+     "res_image": {
+      "path": "resources/Disposition/default/themeetat-module.svg",
+      "mime": "image/svg+xml",
+      "name": "themeetat-module.svg"
+     },
+     "row_module_id__mdl_name": "ThemeEtat"
+    }
+   }]
+  },
+  {
+   "object": "Dataset",
+   "label": "Datasets",
+   "icon": "img/color/file",
+   "field": "row_module_id",
+   "list": [{
+    "object": "Dataset",
+    "userkey": "ThemeEtat~apply-dsfr-to-demo-userhome",
+    "item": {
+     "row_module_id__mdl_name": "ThemeEtat",
+     "dt_name": "apply-dsfr-to-demo-userhome",
+     "dt_file": {
+      "path": "data/apply-dsfr-to-demo-userhome.xml",
+      "mime": "text/xml",
+      "name": "apply-dsfr-to-demo-userhome.xml"
+     },
+     "dt_desc": "Apply DSFR to Simplicité's Demo Module",
+     "dt_exportdate_from": null,
+     "dt_exportdate_to": null,
+     "dt_export_format": "xml",
+     "dt_export_zip": false
+    }
+   }]
+  }
+ ]
+}
