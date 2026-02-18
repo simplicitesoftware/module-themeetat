@@ -146,30 +146,104 @@
    "label": "Resources",
    "icon": "img/system/resource",
    "field": "row_module_id",
-   "list": [{
-    "object": "Resource",
-    "userkey": "Disposition(default)~ANY~themeetat-module",
-    "item": {
-     "res_object": {
-      "object": "Disposition",
-      "label": "Disposition",
-      "userkeylabel": "default",
-      "icon": "img/system/disposition",
-      "item": {"dis_code": "default"}
-     },
-     "res_type": "IMG",
-     "res_lang": "ANY",
-     "res_code": "themeetat-module",
-     "res_cached": false,
-     "res_file": null,
-     "res_image": {
-      "path": "resources/Disposition/default/themeetat-module.svg",
-      "mime": "image/svg+xml",
-      "name": "themeetat-module.svg"
-     },
-     "row_module_id__mdl_name": "ThemeEtat"
+   "list": [
+    {
+     "object": "Resource",
+     "userkey": "Disposition(default)~ANY~Marianne",
+     "item": {
+      "res_object": {
+       "object": "Disposition",
+       "label": "Disposition",
+       "userkeylabel": "default",
+       "icon": "img/system/disposition",
+       "item": {"dis_code": "default"}
+      },
+      "res_type": "FONT",
+      "res_lang": "ANY",
+      "res_code": "Marianne",
+      "res_cached": false,
+      "res_file": {
+       "path": "resources/Disposition/default/Marianne.zip",
+       "mime": "application/zip",
+       "name": "Marianne.zip"
+      },
+      "res_image": null,
+      "row_module_id__mdl_name": "ThemeEtat"
+     }
+    },
+    {
+     "object": "Resource",
+     "userkey": "Disposition(default)~ANY~themeetat-module",
+     "item": {
+      "res_object": {
+       "object": "Disposition",
+       "label": "Disposition",
+       "userkeylabel": "default",
+       "icon": "img/system/disposition",
+       "item": {"dis_code": "default"}
+      },
+      "res_type": "IMG",
+      "res_lang": "ANY",
+      "res_code": "themeetat-module",
+      "res_cached": false,
+      "res_file": null,
+      "res_image": {
+       "path": "resources/Disposition/default/themeetat-module.svg",
+       "mime": "image/svg+xml",
+       "name": "themeetat-module.svg"
+      },
+      "row_module_id__mdl_name": "ThemeEtat"
+     }
+    },
+    {
+     "object": "Resource",
+     "userkey": "Disposition(default)~ANY~ICONS_DSFR",
+     "item": {
+      "res_object": {
+       "object": "Disposition",
+       "label": "Disposition",
+       "userkeylabel": "default",
+       "icon": "img/system/disposition",
+       "item": {"dis_code": "default"}
+      },
+      "res_type": "SET",
+      "res_lang": "ANY",
+      "res_code": "ICONS_DSFR",
+      "res_cached": false,
+      "res_file": {
+       "path": "resources/Disposition/default/ICONS_DSFR.zip",
+       "mime": "application/zip",
+       "name": "icons 2.zip"
+      },
+      "res_image": null,
+      "row_module_id__mdl_name": "ThemeEtat"
+     }
+    },
+    {
+     "object": "Resource",
+     "userkey": "Disposition(default)~ANY~ICONS_DSFR_PICTOS",
+     "item": {
+      "res_object": {
+       "object": "Disposition",
+       "label": "Disposition",
+       "userkeylabel": "default",
+       "icon": "img/system/disposition",
+       "item": {"dis_code": "default"}
+      },
+      "res_type": "SET",
+      "res_lang": "ANY",
+      "res_code": "ICONS_DSFR_PICTOS",
+      "res_cached": false,
+      "res_file": {
+       "path": "resources/Disposition/default/ICONS_DSFR_PICTOS.zip",
+       "mime": "application/zip",
+       "name": "icons.zip"
+      },
+      "res_image": null,
+      "row_module_id__mdl_name": "ThemeEtat"
+     }
     }
-   }]
+   ]
   },
   {
    "object": "Dataset",
