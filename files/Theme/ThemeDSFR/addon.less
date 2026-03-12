@@ -1621,6 +1621,15 @@ input[type="checkbox"], input.selrow {
       &:active { background: @background-contrast-grey-active; }
     }
   }
+  
+  .form-group.readonly {
+  	label {
+  		color: @text-disabled-grey !important;
+  	}
+  	.form-control {
+  		border-bottom-color: transparent !important;
+  	}
+  }
 }
 
 .field-longstring { // specific long-text field renderings...

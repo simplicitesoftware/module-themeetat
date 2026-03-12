@@ -25,18 +25,18 @@
       "thm_logo_id": {
        "path": "files/Theme/ThemeDSFR/logo.png",
        "mime": "image/png",
-       "name": "dsfr-headerlogo.png"
+       "name": "logo.png"
       },
       "thm_logo_invert": null,
       "thm_logo2_id": {
        "path": "files/Theme/ThemeDSFR/logo2.png",
        "mime": "image/png",
-       "name": "dsfr-scope.png"
+       "name": "logo2.png"
       },
       "thm_favicon_id": {
        "path": "files/Theme/ThemeDSFR/favicon.png",
        "mime": "image/png",
-       "name": "dsfr-favicon.png"
+       "name": "favicon.png"
       },
       "thm_color1": null,
       "thm_color2": null,
@@ -52,7 +52,7 @@
       "thm_addon": {
        "path": "files/Theme/ThemeDSFR/addon.less",
        "mime": "text/x-less",
-       "name": "ThemeDSFR-extended.less"
+       "name": "addon.less"
       },
       "thm_searchbox": null,
       "thm_active": null,
@@ -213,7 +213,7 @@
       "res_file": {
        "path": "resources/Disposition/default/ICONS_DSFR.zip",
        "mime": "application/zip",
-       "name": "icons 2.zip"
+       "name": "ICONS_DSFR.zip"
       },
       "res_image": null,
       "row_module_id__mdl_name": "ThemeEtat"
@@ -237,7 +237,7 @@
       "res_file": {
        "path": "resources/Disposition/default/ICONS_DSFR_PICTOS.zip",
        "mime": "application/zip",
-       "name": "icons.zip"
+       "name": "ICONS_DSFR_PICTOS.zip"
       },
       "res_image": null,
       "row_module_id__mdl_name": "ThemeEtat"
