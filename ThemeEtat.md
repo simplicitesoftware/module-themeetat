@@ -8,6 +8,4 @@
 ![Logo](https://platform.simplicite.io/logos/standard/logo250.png)
 * * *
 
-`ThemeEtat` module definition
-=============================
-
+NO CONTENT ACCESSIBLE IN THIS MODULE

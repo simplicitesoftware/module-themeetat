@@ -7,21 +7,21 @@ ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.simplicite.modules</groupId>
-  <version>6-SNAPSHOT</version>
+  <version>7-SNAPSHOT</version>
   <artifactId>ThemeEtat</artifactId>
   <name>ThemeEtat</name>
   <description>Simplicite module: ThemeEtat</description>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <simplicite.url>https://ahe63.dev2.simplicite.io</simplicite.url>
-    <simplicite.version>6.3-SNAPSHOT</simplicite.version>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
+    <simplicite.url>http://localhost:8080</simplicite.url>
+    <simplicite.version>7.0-SNAPSHOT</simplicite.version>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
     <maven.compiler.proc>full</maven.compiler.proc>
     <skipTests>true</skipTests>
     <sonar.projectKey>simplicite-modules-ThemeEtat</sonar.projectKey>
     <sonar.projectName>ThemeEtat</sonar.projectName>
-    <sonar.projectVersion>6</sonar.projectVersion>
+    <sonar.projectVersion>7</sonar.projectVersion>
     <sonar.sources>src,resources</sonar.sources>
     <sonar.exclusions>ThemeEtat.xml,ThemeEtat.json,ThemeEtat-*.yml,configuration/**,**.min.js,**.min.css</sonar.exclusions>
     <sonar.coverage.exclusions>resources/**.js,src/**.java</sonar.coverage.exclusions>
@@ -29,6 +29,7 @@ ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
   <packaging>jar</packaging>
   <url>${simplicite.url}</url>
   <build>
+    <finalName>module-themeetat</finalName>
     <sourceDirectory>${project.basedir}/src</sourceDirectory>
     <testSourceDirectory>${project.basedir}/test/src</testSourceDirectory>
     <resources>
@@ -43,6 +44,7 @@ ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
         <artifactId>maven-jar-plugin</artifactId>
         <version>3.5.0</version>
         <configuration>
+          <outputDirectory>build</outputDirectory>
           <excludes>
             <exclude>.gitkeep</exclude>
             <exclude>Disposition/**</exclude>
@@ -62,14 +64,14 @@ ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>3.6.0</version>
         <configuration>
-          <configLocation>${project.basedir}/.checkstyle-configuration</configLocation>
+          <configLocation>${project.basedir}/.checkstyle-configuration.xml</configLocation>
           <includeTestSourceDirectory>true</includeTestSourceDirectory>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>com.puppycrawl.tools</groupId>
             <artifactId>checkstyle</artifactId>
-            <version>12.3.1</version>
+            <version>14.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -92,11 +94,42 @@ ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
       <artifactId>simplicite-api</artifactId>
       <version>${simplicite.version}</version>
     </dependency>
-    <dependency>
-      <groupId>com.simplicite</groupId>
-      <artifactId>simplicite-api</artifactId>
-      <version>${simplicite.version}</version>
-      <classifier>javadoc</classifier>
-    </dependency>
   </dependencies>
+  <profiles>
+    <profile>
+      <id>build-others</id>
+      <activation>
+        <file>
+          <exists>others/pom.xml</exists>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.6.3</version>
+            <executions>
+              <execution>
+                <?m2e ignore?>
+                <id>build-others-module</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <configuration>
+                  <executable>mvn</executable>
+                  <workingDirectory>${project.basedir}/others</workingDirectory>
+                  <arguments>
+                    <argument>clean</argument>
+                    <argument>package</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>

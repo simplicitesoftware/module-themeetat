@@ -1,9 +1,10 @@
 {
-    "date": "2026-03-19 15:33:30",
+    "date": "2026-10-16 12:36:33",
     "name": "ThemeEtat",
     "format": "json",
     "files": ["ThemeEtat.json"],
     "repository": {"origin": {"uri": "https://github.com/simplicitesoftware/module-themeetat.git"}},
-    "version": "6",
-    "platform": "6.3.6"
+    "version": "7",
+    "branch": "v7",
+    "platform": "7.0.0-beta"
 }
