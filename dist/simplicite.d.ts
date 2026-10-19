@@ -3279,6 +3279,12 @@ declare class Bootstrap5 {
      */
     image(src?: string, onload?: JQueryHandler, onerror?: JQueryHandler): JQuery<HTMLImageElement>;
     /**
+     * Long description of an image (displayed in a11y mode only, see a11y.less)
+     * @param text optional description
+     * @param id optional id (to be referenced by the image aria-describedby)
+     */
+    imageLongDesc(text?: string, id?: string): JQuery;
+    /**
      * Link search rendering (for N,N pillbox)
      * @param ctn Search container
      * @param o Business object
@@ -4352,6 +4358,7 @@ declare class Widget {
      * @param p
      * @param p.url image url
      * @param p.alt optional image alt
+     * @param p.longDesc optional image long description
      * @param p.name optional image name
      * @param p.zoom percent or 'fit", fitWidth' or 'fitHeight' to screen
      * @param p.onload optional onload callback
@@ -4359,6 +4366,7 @@ declare class Widget {
     previewImage(p: {
         url: string;
         alt?: string;
+        longDesc?: string;
         name?: string;
         zoom?: string | number;
         onload?: (img: JQuery) => void;
@@ -16079,6 +16087,10 @@ interface DocumentDB {
     alt?: string;
     /** Alt to update */
     newAlt?: string;
+    /** Long description from DB */
+    longDesc?: string;
+    /** Long description to update */
+    newLongDesc?: string;
     /** Base64 thumbnail of an image */
     thumbnail?: string;
 }
@@ -20808,6 +20820,7 @@ declare class UIEngine extends UIEngineBase implements UIRenders {
         docId?: string;
         imageId?: string;
         imageAlt?: string;
+        imageLongDesc?: string;
         preview?: boolean;
     }): void;
     /**
@@ -20899,6 +20912,7 @@ declare class UIEngine extends UIEngineBase implements UIRenders {
      * @param doc.id (docId alias)
      * @param doc.name Optional image name
      * @param doc.alt Optional image alt
+     * @param doc.longDesc Optional image long description
      * @param onload optional callback when loaded
      * @example
      * $ui.clickImage(obj.getFieldValue("myObjPhoto") as DocumentDB, (img: JQuery) => img.addClass("rounded"));

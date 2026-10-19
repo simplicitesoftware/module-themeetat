@@ -27,7 +27,6 @@
      "pal_color3": "#f6f6f6",
      "pal_color4": "#3a3a3a",
      "pal_color5": "#000091",
-     "pal_color6": null,
      "row_module_id__mdl_name": "ThemeEtat"
     }
    }]
@@ -64,7 +63,7 @@
       "mime": "text/x-less",
       "name": "const.less"
      },
-     "thm_custom_const": ":local {}",
+     "thm_custom_const": ":local {\n  /* --- Brand --- */\n  --primary: #000091;\n  --primary-hover: #1212ff;\n  --primary-active: #2323ff;\n  --on-primary: #f5f5fe;\n  --primary-tint: #e3e3fd;\n\n  /* --- Text --- */\n  --text: #3a3a3a;\n  --text-title: #161616;\n  --text-muted: #666666;\n  --text-disabled: #929292;\n\n  /* --- Surfaces --- */\n  --bg: #ffffff;\n  --bg-alt: #f6f6f6;\n  --bg-contrast: #eeeeee;\n  --bg-disabled: #e5e5e5;\n\n  /* --- Borders & focus --- */\n  --border-color: #dddddd;\n  --border-strong-color: #3a3a3a;\n  --focus-color: #0a76f6;\n\n  /* --- Status --- */\n  --success: #18753c;\n  --success-bg: #b8fec9;\n  --error: #ce0500;\n  --error-bg: #ffe9e9;\n  --warning: #b34000;\n  --warning-bg: #ffe9e6;\n  --info: #0063cb;\n  --info-bg: #e8edff;\n\n  /* --- Illustrations (hex approximate, verify in dsfr.css) --- */\n  --illustration-blue-color: #417dc4;\n  --illustration-blue-color-light: #e6eefa;\n  --illustration-green-color: #00a95f;\n  --illustration-green-color-light: #c3fad5;\n  --illustration-yellow-color: #c8aa39;\n  --illustration-yellow-color-light: #feecc2;\n  --illustration-orange-color: #e4794a;\n  --illustration-orange-color-light: #fee9e5;\n  --illustration-purple-color: #a558a0;\n  --illustration-purple-color-light: #fee7fc;\n  --illustration-pink-color: #ce614a;\n  --illustration-pink-color-light: #fee9e6;\n\n  /* --- Shape & elevation --- */\n  --radius: 0;\n  --radius-input: 0.25rem 0.25rem 0 0;\n  --shadow-overlay: 0 6px 18px 0 rgba(0, 0, 18, 0.16);\n}",
      "thm_parent_id__thm_name": null,
      "thm_palette_id__pal_name": "ThemeDSFR"
     }
