@@ -104,7 +104,7 @@ ol.breadcrumb {
 }
 /** LINKS
  */
-a:not(.js-searchable):not(.js-dropdown-toggle):not(.nav-link):not(.menu-sel) {
+a:not(.js-searchable):not(.js-dropdown-toggle):not(.nav-link):not(.menu-sel):not(.top-menu-btn):not(.js-flyout-toggle) {
 	color: var(--simplicite-active-text-color);
 	text-decoration: underline;
 	&:focus, &:focus-visible, &:hover {
@@ -369,24 +369,6 @@ input[type="checkbox"], input.selrow {
 		background-color: var(--dsfr-btn-primary-hover) !important;
 	}
 }
-/** MENU TOP
- */
-#menu-top {
-	ul.top-menu {
-		.top-menu-btn {
-			&:hover { background-color: var(--pal-base); }
-			&.open { background-color: var(--simplicite-active-color); }
-		}
-		ul.top-dropdown {
-			li > a:hover { background-color: var(--pal-base); }
-			li.has-flyout.open { background-color: var(--simplicite-active-color); }
-		}
-	}
-}
-ul.flyout-detached {
-	li > *:hover { background-color: var(--pal-base); }
-	li > button[aria-expanded='true'] { background-color: var(--simplicite-active-color); }
-}
 /** WIDGETS
  */
 .widget-counters {
@@ -395,17 +377,10 @@ ul.flyout-detached {
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		background-color: var(--pal-primary);
-		border: var(--simplicite-border);
 		border-bottom-width: 3px;
 		border-bottom-color: var(--simplicite-active-text-color);
 		padding: 1.25rem;
-		.icon {
-			opacity: 1;
-			color: var(--simplicite-active-text-color);
-		}
 		span.text {
-			color: var(--simplicite-active-text-color) !important;
 			flex-direction: row;
 			gap: .5rem;
 			margin-left: 0;
@@ -423,51 +398,17 @@ ul.flyout-detached {
 			background-position: 0 0;
 			background-repeat: no-repeat;
 		}
-		&:hover, &:focus-visible { background: var(--pal-base); }
-	}
-}
-.widget-cards .row-horizontal {
-	.card {
-		padding: 0 !important;
-		width: 16rem !important;
-		.card-body {
-			.card-title {
-				color: var(--simplicite-active-text-color) !important;
-				font-weight: bold;
-				margin-bottom: .25rem;
-			}
-			.card-subtitle,
-			.card-text {
-				color: var(--dsfr-text-color) !important;
-			}
-		}
-	}
-}
-.widget-accordion {
-	.accordion-item {
-		border-left: none;
-		border-right: none;
-		.accordion-button {
-			color: var(--simplicite-active-text-color);
-			&:not(.collapsed) {
-				color: var(--simplicite-active-text-color);
-				background-color: var(--simplicite-active-color);
-			}
-			&:focus {
-				box-shadow: none;
-				outline: var(--simplicite-outline) !important;
-				outline-offset: -2px
+		
+		&:not(.grey) {
+			border-bottom-color: var(--pal-text);
+			&::after {
+				filter: grayscale(1);
 			}
 		}
 	}
 }
 .widget-carousel {
 	.carousel {
-		background-color: var(--simplicite-background-light);
-		.carousel-item {
-			.title-link { color: var(--simplicite-active-text-color); }
-			.subtitle { color: var(--simplicite-text-color); }
-		}
 		.carousel-control-next,
 		.carousel-control-prev {
 			filter: invert(1);
@@ -481,30 +422,6 @@ ul.flyout-detached {
 				outline-offset: -2px;
 			}
 		}
-	}
-}
-
-.widget-cards .row-vertical {
-	.card {
-		background: var(--simplicite-background-light);
-		border: var(--simplicite-border);
-		border-left-width: 3px;
-		border-left-color: var(--simplicite-active-text-color);
-		margin-bottom: 1rem;
-		.card-body { background: var(--simplicite-background-light); }
-		&:after {
-			content: '';
-			position: absolute;
-			bottom: .75rem;
-			right: .5rem;
-			width: .875rem;
-			height: .875rem;
-			background-image: var(--dsfr-arrow-right);
-			background-size: 100%;
-			background-position: 0 0;
-			background-repeat: no-repeat;
-		}
-		&:hover, &:focus-visible { background: var(--pal-base); }
 	}
 }
 .widget-shortcut .list-shortcuts {
@@ -529,21 +446,6 @@ ul.flyout-detached {
 			&:hover, &:focus-visible {
 				background-color: var(--pal-base); 
 				box-shadow: none !important;
-			}
-		}
-	}
-}
-.states-navbar {
-	margin-bottom: 1rem;
-	.state-header {
-		color: #666666;
-		.state-title { color: var(--simplicite-text-color); }
-	}
-	.navbar-paving {
-		li {
-			background-color: var(--pal-secondary);
-			&.visited, &.current {
-				background-color: var(--simplicite-active-text-color);
 			}
 		}
 	}
