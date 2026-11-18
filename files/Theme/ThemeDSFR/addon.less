@@ -399,11 +399,21 @@ input[type="checkbox"], input.selrow {
 			background-repeat: no-repeat;
 		}
 		
-		&:not(.grey) {
-			border-bottom-color: var(--pal-text);
+		&.green, &.red, &.blue, &.orange,
+		&.purple, &.yellow, &.turquoise {
+			border-bottom-color: var(--pal-text) !important;
 			&::after {
 				filter: grayscale(1);
 			}
+		}
+		&.black, &.brown {
+			border-bottom-color: var(--pal-base) !important;
+			&::after {
+				display: none;
+			}
+		}
+		&::hover {
+			border-bottom-color: var(--simplicite-active-text-color);
 		}
 	}
 }
@@ -508,6 +518,7 @@ input[type="checkbox"], input.selrow {
 .bookmarks.bar-visible { padding-left: .75rem; }
 .footer {
 }
+
 /** ADDONS & SPECIFICS
  */
 .ql-snow.ql-toolbar button:hover,
@@ -526,4 +537,41 @@ input[type="checkbox"], input.selrow {
 .ql-snow .ql-toolbar .ql-picker-item.ql-selected {
 	background-color: var(--simplicite-active-color);
 	color: var(--simplicite-active-text-color);
+}
+// socials
+.social {
+	.post:not(.create) {
+		border-left: solid .125rem var(--pal-accent);
+		.msg {
+			background-color: inherit;
+			color: var(--simplicite-text-color);
+			padding: 0;
+			margin-top: .5rem;
+		}
+		.btn-like>* {
+			color: var(--simplicite-active-text-color);
+		}
+		&.focus .msg textarea {
+			border-bottom: var(--simplicite-border);
+			border-color: var(--simplicite-text-color);
+		}
+	}
+	.post.create {
+		border: var(--simplicite-border);
+		.msg textarea {
+			border-bottom: var(--simplicite-border);
+			border-color: var(--simplicite-text-color);
+		}
+		&:hover, &:focus-visible {
+			box-shadow: none;
+			background-color: var(--simplicite-active-color);
+			color: var(--simplicite-text-color);
+			.msg, &.focus {
+				background-color: var(--simplicite-active-color);
+			}
+		}
+		&.focus {
+			background-color: var(--simplicite-background-light);
+		}
+	}
 }
