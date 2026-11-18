@@ -104,7 +104,7 @@ ol.breadcrumb {
 }
 /** LINKS
  */
-a:not(.js-searchable):not(.js-dropdown-toggle):not(.nav-link):not(.menu-sel):not(.top-menu-btn):not(.js-flyout-toggle) {
+a:not(.js-searchable):not(.js-dropdown-toggle):not(.nav-link):not(.menu-sel):not(.top-menu-btn):not(.js-flyout-toggle):not(.fc-daygrid-day-number) {
 	color: var(--simplicite-active-text-color);
 	text-decoration: underline;
 	&:focus, &:focus-visible, &:hover {
@@ -650,6 +650,35 @@ input[type="checkbox"], input.selrow {
 				background-color: var(--dsfr-btn-primary-hover);
 				color: var(--simplicite-text-color-inverse);
 			}
+		}
+	}
+}
+.agenda {
+	.fc-button {
+		&.fc-button-primary:focus-visible,
+		&.fc-button-primary:hover {
+			background-color: var(--pal-accent);
+			color: var(--simplicite-text-color-inverse);
+		}
+		&:disabled {
+			opacity: 1;
+			border: none;
+			&:hover, &:focus-visible {
+				background-color: transparent !important;
+				color: var(--pal-accent) !important;
+			}
+		}
+	}
+	.fc-daygrid-day.fc-day-today, .fc-timegrid-col.fc-day-today {
+		background-color: var(--simplicite-active-color) !important;
+	}
+	.fc-timegrid-now-indicator-line {
+		border-color: var(--pal-accent) !important;
+	}
+	.fc-day-other .fc-daygrid-day-top {
+		opacity: 1;
+		> a {
+			color: var(--simplicite-text-color);
 		}
 	}
 }
