@@ -141,6 +141,10 @@ tr:not(.search):has(.col-action) {
 	td.col-action { background-color: var(--simplicite-list-filter-background); }
 	td:nth-of-type(2) { border-left: solid .0625rem var(--simplicite-text-color); }
 }
+tbody > tr.group-by-title > th {
+	border-top-color: var(--simplicite-text-color) !important;
+	border-bottom-color: var(--simplicite-text-color) !important;
+}
 .list-footer {
 	.list-navbar {
 		ul.pagination {
@@ -519,26 +523,8 @@ input[type="checkbox"], input.selrow {
 .footer {
 }
 
-/** ADDONS & SPECIFICS
+/** SOCIALS
  */
-.ql-snow.ql-toolbar button:hover,
-.ql-snow .ql-toolbar button:hover,
-.ql-snow.ql-toolbar button:focus, 
-.ql-snow .ql-toolbar button:focus,
-.ql-snow.ql-toolbar button.ql-active,
-.ql-snow .ql-toolbar button.ql-active,
-.ql-snow.ql-toolbar .ql-picker-label:hover,
-.ql-snow .ql-toolbar .ql-picker-label:hover,
-.ql-snow.ql-toolbar .ql-picker-label.ql-active,
-.ql-snow .ql-toolbar .ql-picker-label.ql-active,
-.ql-snow.ql-toolbar .ql-picker-item:hover,
-.ql-snow .ql-toolbar .ql-picker-item:hover,
-.ql-snow.ql-toolbar .ql-picker-item.ql-selected,
-.ql-snow .ql-toolbar .ql-picker-item.ql-selected {
-	background-color: var(--simplicite-active-color);
-	color: var(--simplicite-active-text-color);
-}
-// socials
 .social {
 	.post:not(.create) {
 		border-left: solid .125rem var(--pal-accent);
@@ -572,6 +558,98 @@ input[type="checkbox"], input.selrow {
 		}
 		&.focus {
 			background-color: var(--simplicite-background-light);
+		}
+	}
+}
+
+/** ADDONS & SPECIFICS
+ */
+.ql-snow.ql-toolbar button:hover,
+.ql-snow .ql-toolbar button:hover,
+.ql-snow.ql-toolbar button:focus, 
+.ql-snow .ql-toolbar button:focus,
+.ql-snow.ql-toolbar button.ql-active,
+.ql-snow .ql-toolbar button.ql-active,
+.ql-snow.ql-toolbar .ql-picker-label:hover,
+.ql-snow .ql-toolbar .ql-picker-label:hover,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active,
+.ql-snow.ql-toolbar .ql-picker-item:hover,
+.ql-snow .ql-toolbar .ql-picker-item:hover,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected {
+	background-color: var(--simplicite-active-color);
+	color: var(--simplicite-active-text-color);
+}
+.flatpickr-calendar {
+	border-radius: 0 !important;
+	.flatpickr-months {
+		.flatpickr-month {
+			background-color: var(--simplicite-background-light);
+			color: var(--simplicite-text-color);
+		}
+		.flatpickr-next-month, .flatpickr-prev-month {
+			opacity: 1;
+			&:hover, &:focus-visible {
+				background-color: var(--simplicite-active-color);
+				color: var(--simplicite-active-text-color);
+			}
+		}
+	}
+	.flatpickr-innerContainer {
+		.flatpickr-weekdays {
+			background-color: var(--simplicite-background-light);
+			color: var(--simplicite-text-color);
+			border-top: var(--simplicite-border);
+			border-bottom: var(--simplicite-border);
+			span.flatpickr-weekday {
+				background-color: var(--simplicite-background-light);
+				color: var(--simplicite-text-color);
+				&:not(:last-child) {
+					border-right: var(--simplicite-border);
+				}
+			}
+		}
+		.flatpickr-days {
+			.flatpickr-day.today {
+				background-color: var(--simplicite-active-color);
+				color: var(--simplicite-text-color);
+			}
+			.flatpickr-day {
+				&:hover, &:focus-visible {
+					border: solid .125rem var(--pal-accent);
+					background-color: var(--simplicite-background-medium);
+					color: var(--simplicite-text-color);
+				}
+			}
+		}
+		.flatpickr-monthSelect-months {
+			.flatpickr-monthSelect-month {
+				background-color: var(--simplicite-background-light);
+				color: var(--simplicite-text-color);
+				&.today {
+					background-color: var(--simplicite-active-color);
+					color: var(--simplicite-text-color);
+				}
+				&:hover, &:focus-visible {
+					border: solid .125rem var(--pal-accent);
+					background-color: var(--simplicite-background-medium);
+					color: var(--simplicite-text-color);
+				}
+			}
+		}
+	}
+	.flatpickr-action-bar {
+		background-color: var(--simplicite-background-light);
+		color: var(--simplicite-text-color);
+		border-top: var(--simplicite-border);
+		button {
+			background-color: var(--simplicite-btn-primary-background-color);
+			color: var(--simplicite-text-color-inverse);
+			&:hover, &:focus-visible {
+				background-color: var(--dsfr-btn-primary-hover);
+				color: var(--simplicite-text-color-inverse);
+			}
 		}
 	}
 }

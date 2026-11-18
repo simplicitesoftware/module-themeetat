@@ -16776,6 +16776,8 @@ interface WorkTabInfos {
     name: string;
     /** unique tab? default true = if a tab with the same name already exists, activate it instead of creating a new one */
     unique?: boolean;
+    /** name of the shortcut opened in the tab: kept when the navigation renames the tab, to open the shortcut once (unique tab) */
+    shortcut?: string;
     /** can move the tab, default true */
     draggable?: boolean;
     /** add a close button to tab, default true */
@@ -17079,12 +17081,16 @@ declare class UISplitter {
     getDeskContent(el: JQuery): JQuery<HTMLElement>;
     /**
      * Find a tab in all work-areas
-     * @param name Optional tab name to find
-     * @returns .nav-link if found
+     * @param key Property value to match, or several property values: a tab matching one of them (undefined values are ignored)
+     * @param param Property name to filter by when the key is a value (name, title, shortcut, url...)
+     * @returns first matching .nav-link if found
      * @example
-     * const tab = $view.splitter.findTab("myTab");
+     * const tab1 = $view.splitter.findTab("myTab");
+     * const tab2 = $view.splitter.findTab("myShortcut", "shortcut");
+     * // Tab named "myTab" or opened by the shortcut "myShortcut" (one scan)
+     * const tab3 = $view.splitter.findTab({ name: "myTab", shortcut: "myShortcut" });
      */
-    findTab(name?: string): JQuery | undefined;
+    findTab(key?: string | Partial<WorkTab>, param?: keyof WorkTab): JQuery | undefined;
     /**
      * Get a tab of related element
      * @param el any content element inside the .work-tab-pane
@@ -25122,11 +25128,22 @@ declare class UIEngine extends UIEngineBase implements UIRenders {
     /**
      * Shortcut handler
      * @param shortcut definition <code>\{ name, url, target, label, width, height \}</code>
+     * @param newtab Optional position to open the shortcut in a new work-area 'tab' or 'right' (splitted UI only,
+     * shortcuts opened in the work area, see `isWorkShortcut`)
      * @example
      * // Open a URL as if the user clicked on a shortcut
      * $ui.clickShortcut({ name: "MyDoc", label: "Documentation", url: "https://docs.simplicite.io", target: "_blank" });
      */
-    clickShortcut(shortcut?: Shortcut): void;
+    clickShortcut(shortcut?: Shortcut, newtab?: NewTabPosition): void;
+    /**
+     * Is the shortcut opened in the work area (can be opened in a new work-area)?
+     * Not the shortcuts opened in a window or a dialog, nor the system shortcuts opening a dialog, a panel or a dropdown.
+     * @param shortcut Shortcut definition
+     * @returns `true` for a shortcut opened in the work area
+     */
+    isWorkShortcut(shortcut: Shortcut): boolean;
+    /** System shortcuts opened outside the work area: dialog, docked panel, dropdown or model picker */
+    private static readonly NOT_WORK_SHORTCUTS;
     /**
      * Main menu handler
      * @param data Menu data
