@@ -122,16 +122,6 @@ a:not(.js-searchable):not(.js-dropdown-toggle):not(.nav-link):not(.menu-sel):not
 }
 /** BUTTONS
  */
-.btn.btn-primary {
-	&:hover, &:focus-visible {
-		background-color: var(--dsfr-btn-primary-hover);
-	}
-}
-.btn-btn-secondary {
-	&:hover, &:focus-visible {
-		background-color: var(--dsfr-btn-secondary-hover);
-	}
-}
 .input-group > .btn {
 	color: var(--simplicite-active-text-color);
 }
@@ -201,7 +191,8 @@ ul.dropdown-menu, ul.top-dropdown {
 /** FIELDS + ADDONS + FILTERS
  */
 .field-container:not(:has(.input-group)):not(:has(button)) {
-	input:not([type="range"]), .form-control {
+	input:not([type="range"]):not([type="radio"]):not([type="checkbox"]):not([role="searchbox"]),
+	.form-control {
 		border-bottom: solid 0.125rem var(--simplicite-text-color) !important;
 	}
 }
@@ -220,12 +211,21 @@ ul.dropdown-menu, ul.top-dropdown {
 			opacity: 1;
 			color: var(--simplicite-text-color);
 		}
+		button:hover, button:focus-visible {
+			background-color: #B8B8B8;
+			color: var(--simplicite-text-color);
+		}
 	}
 	.form-control { border-bottom: none !important; }
 }
 .field-image {
 	.image-alt, .image-longdesc-input {
 		border: var(--simplicite-border) !important;
+	}
+}
+.field-enummulti {
+	.field-container:has(select) {
+		border-bottom: solid 0.125rem var(--simplicite-text-color) !important;
 	}
 }
 .doc-multi {
