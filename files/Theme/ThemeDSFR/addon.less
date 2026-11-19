@@ -41,6 +41,14 @@ ol.breadcrumb {
 		text-decoration: none !important;
 	}
 }
+.theme-picker button {
+	background-color: var(--simplicite-background-light);
+	color: var(--pal-accent);
+	&:hover, &:focus-visible {
+		background-color: var(--simplicite-background-medium);
+		color: var(--pal-accent);
+	}
+}
 /** ALERTS
  */
 .alert:not(.field .alert) {
@@ -192,6 +200,18 @@ ul.dropdown-menu, ul.top-dropdown {
 }
 /** FIELDS + ADDONS + FILTERS
  */
+.field-container:not(:has(.input-group)):not(:has(button)) {
+	input:not([type="range"]), .form-control {
+		border-bottom: solid 0.125rem var(--simplicite-text-color) !important;
+	}
+}
+.field-container .progress {
+	margin-top: .25rem;
+	border: var(--simplicite-border);
+}
+.field-container:has(.form-select) {
+	border-bottom: solid 0.125rem var(--simplicite-text-color) !important;
+}
 .field {
 	.input-group {
 		border-bottom: solid 0.125rem var(--simplicite-text-color);
@@ -202,6 +222,19 @@ ul.dropdown-menu, ul.top-dropdown {
 		}
 	}
 	.form-control { border-bottom: none !important; }
+}
+.field-image {
+	.image-alt, .image-longdesc-input {
+		border: var(--simplicite-border) !important;
+	}
+}
+.doc-multi {
+	label {
+		background-color: var(--pal-accent);
+		i {
+			color: var(--simplicite-text-color-inverse);
+		}
+	}
 }
 .form-group.readonly {
 	button, div.render {
@@ -421,23 +454,6 @@ input[type="checkbox"], input.selrow {
 		}
 	}
 }
-.widget-carousel {
-	.carousel {
-		.carousel-control-next,
-		.carousel-control-prev {
-			filter: invert(1);
-			opacity: 1;
-			&:hover, &:focus-visible {
-				background-color: #090909; // inverted to F6F6F6
-			}
-			&:focus, &:focus-visible {
-				outline: var(--simplicite-outline);
-				outline-color: #FFFF6E; // inverted to 000091
-				outline-offset: -2px;
-			}
-		}
-	}
-}
 .widget-shortcut .list-shortcuts {
 	.item {
 		&.card-m, &.card-l {
@@ -558,6 +574,14 @@ input[type="checkbox"], input.selrow {
 		}
 		&.focus {
 			background-color: var(--simplicite-background-light);
+		}
+	}
+}
+.social-embedded {
+	.post {
+		border-top: none !important;
+		.markdown-html {
+			border: none;
 		}
 	}
 }
